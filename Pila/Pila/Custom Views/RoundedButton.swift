@@ -12,14 +12,14 @@ import UIKit
 final class RoundedButton: UIButton {
 
     @IBInspectable
-    private var borderWidth: CGFloat {
+    private var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
     @IBInspectable
-    private var borderColor: UIColor {
+    private var borderColor: UIColor = .clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }

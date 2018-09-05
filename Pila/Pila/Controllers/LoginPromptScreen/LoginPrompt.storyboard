@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5b9-c2-UfN">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,26 +30,45 @@
                                     <constraint firstAttribute="height" constant="203" id="kGY-54-RAk"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-hf-5OK" customClass="RoundedButton" customModule="Pila" customModuleProvider="target">
-                                <rect key="frame" x="132" y="424" width="59" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Sign up">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KOn-gj-R5L">
+                                <rect key="frame" x="20" y="419" width="280" height="129"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWS-8J-qmB" customClass="RoundedButton" customModule="Pila" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="59.5"/>
+                                        <color key="backgroundColor" red="0.4431372549" green="0.78823529410000004" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Log in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-hf-5OK" customClass="RoundedButton" customModule="Pila" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="69.5" width="280" height="59.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.56470588235294117" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                         <constraints>
                             <constraint firstItem="FlK-Ug-R75" firstAttribute="leading" secondItem="FCR-KY-8HC" secondAttribute="leading" id="5XM-1m-7ms"/>
                             <constraint firstItem="FlK-Ug-R75" firstAttribute="trailing" secondItem="FCR-KY-8HC" secondAttribute="trailing" id="bSE-r1-8Fd"/>
+                            <constraint firstItem="KOn-gj-R5L" firstAttribute="leading" secondItem="FCR-KY-8HC" secondAttribute="leading" constant="20" id="jHD-Fa-QeP"/>
+                            <constraint firstItem="FCR-KY-8HC" firstAttribute="trailing" secondItem="KOn-gj-R5L" secondAttribute="trailing" constant="20" id="jRq-kA-PDA"/>
                             <constraint firstItem="ErY-Ea-Ktu" firstAttribute="centerX" secondItem="j8g-77-gj3" secondAttribute="centerX" id="khu-aM-Yj2"/>
                             <constraint firstItem="ErY-Ea-Ktu" firstAttribute="top" secondItem="FCR-KY-8HC" secondAttribute="top" constant="18" id="nty-3d-lNp"/>
+                            <constraint firstItem="KOn-gj-R5L" firstAttribute="top" secondItem="FlK-Ug-R75" secondAttribute="bottom" constant="20" id="o14-t2-fhj"/>
+                            <constraint firstItem="FCR-KY-8HC" firstAttribute="bottom" secondItem="KOn-gj-R5L" secondAttribute="bottom" constant="20" id="v8k-P5-keW"/>
                             <constraint firstItem="FlK-Ug-R75" firstAttribute="top" secondItem="ErY-Ea-Ktu" secondAttribute="bottom" constant="36" id="yuT-31-W95"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCR-KY-8HC"/>
