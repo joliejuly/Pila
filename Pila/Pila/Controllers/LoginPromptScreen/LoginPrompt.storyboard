@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,20 +9,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Prompt View Controller-->
         <scene sceneID="4pO-b8-3Lr">
             <objects>
-                <viewController id="5b9-c2-UfN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPromptViewController" id="5b9-c2-UfN" customClass="LoginPromptViewController" customModule="Pila" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j8g-77-gj3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pila_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ErY-Ea-Ktu">
+                                <rect key="frame" x="53" y="38" width="214" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="aYx-XY-QUf"/>
+                                    <constraint firstAttribute="width" constant="214" id="gdd-eJ-Gac"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people_in_queue" translatesAutoresizingMaskIntoConstraints="NO" id="FlK-Ug-R75">
+                                <rect key="frame" x="0.0" y="196" width="320" height="203"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="203" id="kGY-54-RAk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-hf-5OK" customClass="RoundedButton" customModule="Pila" customModuleProvider="target">
+                                <rect key="frame" x="132" y="424" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.56470588235294117" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                        <constraints>
+                            <constraint firstItem="FlK-Ug-R75" firstAttribute="leading" secondItem="FCR-KY-8HC" secondAttribute="leading" id="5XM-1m-7ms"/>
+                            <constraint firstItem="FlK-Ug-R75" firstAttribute="trailing" secondItem="FCR-KY-8HC" secondAttribute="trailing" id="bSE-r1-8Fd"/>
+                            <constraint firstItem="ErY-Ea-Ktu" firstAttribute="centerX" secondItem="j8g-77-gj3" secondAttribute="centerX" id="khu-aM-Yj2"/>
+                            <constraint firstItem="ErY-Ea-Ktu" firstAttribute="top" secondItem="FCR-KY-8HC" secondAttribute="top" constant="18" id="nty-3d-lNp"/>
+                            <constraint firstItem="FlK-Ug-R75" firstAttribute="top" secondItem="ErY-Ea-Ktu" secondAttribute="bottom" constant="36" id="yuT-31-W95"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FCR-KY-8HC"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwR-UW-0Ql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-426" y="-2"/>
+            <point key="canvasLocation" x="-427.5" y="-3.1690140845070425"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="people_in_queue" width="471" height="232"/>
+        <image name="pila_logo" width="351" height="226"/>
+    </resources>
 </document>
