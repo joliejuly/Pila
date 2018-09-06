@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3C660F2141A5E200490C60 /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C660E2141A5E200490C60 /* Gilroy-ExtraBold.ttf */; };
+		0F3C66112141A5FE00490C60 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C66102141A5FE00490C60 /* Lato-Regular.ttf */; };
+		0F3C66132141A60700490C60 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C66122141A60700490C60 /* Lato-Bold.ttf */; };
+		0F3C66162141A95400490C60 /* LoginAndRegistrationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C66152141A95400490C60 /* LoginAndRegistrationViewController.storyboard */; };
+		0F3C66182141A98900490C60 /* LoginAndRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C66172141A98900490C60 /* LoginAndRegistrationViewController.swift */; };
+		0F3C661A2141A99800490C60 /* LoginAndRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C66192141A99800490C60 /* LoginAndRegistrationViewModel.swift */; };
 		0F7A60F0214064210020CB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7A60EF214064210020CB74 /* AppDelegate.swift */; };
 		0F7A60F7214064220020CB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7A60F6214064220020CB74 /* Assets.xcassets */; };
 		0F7A60FA214064220020CB74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7A60F8214064220020CB74 /* LaunchScreen.storyboard */; };
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F3C660E2141A5E200490C60 /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0F3C66102141A5FE00490C60 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		0F3C66122141A60700490C60 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		0F3C66152141A95400490C60 /* LoginAndRegistrationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndRegistrationViewController.storyboard; sourceTree = "<group>"; };
+		0F3C66172141A98900490C60 /* LoginAndRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegistrationViewController.swift; sourceTree = "<group>"; };
+		0F3C66192141A99800490C60 /* LoginAndRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegistrationViewModel.swift; sourceTree = "<group>"; };
 		0F7A60EC214064210020CB74 /* Pila.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pila.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7A60EF214064210020CB74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7A60F6214064220020CB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,9 +63,6 @@
 		0F7A6125214065990020CB74 /* LoginPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewModel.swift; sourceTree = "<group>"; };
 		0F7A6127214066180020CB74 /* LoginPrompt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPrompt.storyboard; sourceTree = "<group>"; };
 		0FA95E3921406E6C009FA3BF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		0FA95E3C2141A414009FA3BF /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
-		0FA95E3D2141A41D009FA3BF /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
-		0FA95E3F2141A42C009FA3BF /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3C66142141A8D100490C60 /* LoginAndRegistrationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C66152141A95400490C60 /* LoginAndRegistrationViewController.storyboard */,
+				0F3C66172141A98900490C60 /* LoginAndRegistrationViewController.swift */,
+				0F3C66192141A99800490C60 /* LoginAndRegistrationViewModel.swift */,
+			);
+			path = LoginAndRegistrationScreen;
+			sourceTree = "<group>";
+		};
 		0F7A60E3214064210020CB74 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +172,7 @@
 		0F7A6120214064870020CB74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F3C66142141A8D100490C60 /* LoginAndRegistrationScreen */,
 				0F7A61222140653E0020CB74 /* LoginPromptScreen */,
 			);
 			path = Controllers;
@@ -178,9 +198,9 @@
 		0FA95E3B2141A3F7009FA3BF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0FA95E3D2141A41D009FA3BF /* Lato-Regular.ttf */,
-				0FA95E3F2141A42C009FA3BF /* Gilroy-ExtraBold.ttf */,
-				0FA95E3C2141A414009FA3BF /* Lato-Bold.ttf */,
+				0F3C66102141A5FE00490C60 /* Lato-Regular.ttf */,
+				0F3C66122141A60700490C60 /* Lato-Bold.ttf */,
+				0F3C660E2141A5E200490C60 /* Gilroy-ExtraBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -290,8 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F7A60FA214064220020CB74 /* LaunchScreen.storyboard in Resources */,
+				0F3C66132141A60700490C60 /* Lato-Bold.ttf in Resources */,
 				0F7A6128214066180020CB74 /* LoginPrompt.storyboard in Resources */,
+				0F3C66112141A5FE00490C60 /* Lato-Regular.ttf in Resources */,
 				0F7A60F7214064220020CB74 /* Assets.xcassets in Resources */,
+				0F3C66162141A95400490C60 /* LoginAndRegistrationViewController.storyboard in Resources */,
+				0F3C660F2141A5E200490C60 /* Gilroy-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,8 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3C66182141A98900490C60 /* LoginAndRegistrationViewController.swift in Sources */,
 				0F7A6124214065890020CB74 /* LoginPromptViewController.swift in Sources */,
 				0F7A60F0214064210020CB74 /* AppDelegate.swift in Sources */,
+				0F3C661A2141A99800490C60 /* LoginAndRegistrationViewModel.swift in Sources */,
 				0F7A6126214065990020CB74 /* LoginPromptViewModel.swift in Sources */,
 				0FA95E3A21406E6C009FA3BF /* RoundedButton.swift in Sources */,
 			);
