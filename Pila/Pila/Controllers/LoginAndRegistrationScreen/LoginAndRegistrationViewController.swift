@@ -24,51 +24,71 @@ final class LoginAndRegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews(with: viewModel.sectionChosen)
+        setUpViews(with: viewModel.sectionChosen, animated: false)
         setUpBindings()
     }
     
     @IBAction func loginSectionChosen(_ sender: UIButton) {
-        setUpLoginView()
+        setUpLoginView(animated: true)
     }
     
     @IBAction func signInSectionChosen(_ sender: UIButton) {
-        setUpSignInView()
+        setUpSignInView(animated: true)
     }
     
     private func setUpBindings() {
         viewModel.userDidChooseSection = { [weak self] section in
-            self?.setUpViews(with: section)
+            self?.setUpViews(with: section, animated: true)
         }
     }
     
     //MARK: - Helpers - Views setup
-    private func setUpViews(with section: SectionChosen) {
+    private func setUpViews(with section: SectionChosen, animated: Bool) {
         
         navigationController?.navigationBar.isHidden = true
         
         switch section {
         case .login:
-            setUpLoginView()
+            setUpLoginView(animated: animated)
         case .signin:
-            setUpSignInView()
+            setUpSignInView(animated: animated)
         }
     }
     
-    private func setUpLoginView() {
-        signInPeak.alpha = 0
-        loginPeak.alpha = 1
+    private func setUpLoginView(animated: Bool) {
+        if animated {
+            UIView.animate(withDuration: 0.4) {
+                self.signInPeak.alpha = 0
+                self.loginPeak.alpha = 1
+            }
+        } else {
+            self.signInPeak.alpha = 0
+            self.loginPeak.alpha = 1
+        }
+        
         loginSectionButton.isEnabled = false
         signInSectionButton.isEnabled = true
         
     }
     
-    private func setUpSignInView() {
-        signInPeak.alpha = 1
-        loginPeak.alpha = 0
+    private func setUpSignInView(animated: Bool) {
+        
+        if animated {
+            UIView.animate(withDuration: 0.4) {
+                self.signInPeak.alpha = 1
+                self.loginPeak.alpha = 0
+            }
+        } else {
+            self.signInPeak.alpha = 1
+            self.loginPeak.alpha = 0
+        }
+        
         
         loginSectionButton.isEnabled = true
         signInSectionButton.isEnabled = false
+        
+        
+        
     }
     
     

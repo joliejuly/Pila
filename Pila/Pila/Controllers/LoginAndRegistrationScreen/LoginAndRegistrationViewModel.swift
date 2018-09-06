@@ -6,4 +6,19 @@
 //  Copyright © 2018 Julia Nikitina. All rights reserved.
 //
 
-import Foundation
+final class LoginAndRegistrationViewModel {
+    
+    var userDidChooseSection: ((SectionChosen) -> Void)?
+    
+    var sectionChosen: SectionChosen = .login {
+        didSet {
+            userDidChooseSection?(sectionChosen)
+        }
+    }
+}
+
+
+enum SectionChosen {
+    case login
+    case signin
+}
