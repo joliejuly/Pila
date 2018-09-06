@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,21 +9,65 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login And Registration View Controller-->
         <scene sceneID="IWo-GP-o10">
             <objects>
                 <viewController storyboardIdentifier="LoginAndRegistrationViewController" id="p3j-ls-hmc" customClass="LoginAndRegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yuz-bH-zgk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW1-1E-8VS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-Dr-onK">
+                                        <rect key="frame" x="40" y="18" width="240" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-Xe-cti">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="Log in">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eH-Hj-tsr">
+                                                <rect key="frame" x="187" y="0.0" width="53" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="Sign in">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                <constraints>
+                                    <constraint firstItem="zWT-Dr-onK" firstAttribute="leading" secondItem="RW1-1E-8VS" secondAttribute="leading" constant="40" id="6ET-iX-XUB"/>
+                                    <constraint firstAttribute="trailing" secondItem="zWT-Dr-onK" secondAttribute="trailing" constant="40" id="7xB-kP-iC6"/>
+                                    <constraint firstAttribute="height" constant="70" id="emY-Uz-Yxt"/>
+                                    <constraint firstItem="zWT-Dr-onK" firstAttribute="centerY" secondItem="RW1-1E-8VS" secondAttribute="centerY" id="vr9-E0-lUw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RW1-1E-8VS" firstAttribute="trailing" secondItem="unG-aF-uym" secondAttribute="trailing" id="E8N-nh-M2D"/>
+                            <constraint firstItem="RW1-1E-8VS" firstAttribute="top" secondItem="Yuz-bH-zgk" secondAttribute="top" id="Rq5-7H-6FK"/>
+                            <constraint firstItem="RW1-1E-8VS" firstAttribute="leading" secondItem="unG-aF-uym" secondAttribute="leading" id="XNh-d5-GUF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="unG-aF-uym"/>
                     </view>
+                    <navigationItem key="navigationItem" id="isF-wP-OUH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w18-CL-E6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="153"/>
+            <point key="canvasLocation" x="856.79999999999995" y="152.47376311844079"/>
         </scene>
     </scenes>
 </document>
