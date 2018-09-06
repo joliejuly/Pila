@@ -8,15 +8,25 @@
 
 import UIKit
 
-class LoginPromptViewController: UIViewController {
+final class LoginPromptViewController: UIViewController {
 
+    weak var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func loginScreenTapped(_ sender: RoundedButton) {
+        coordinator?.showLoginSignInScreen(with: .login)
+    }
+    
+    @IBAction func signUpButtonTapped(_ sender: RoundedButton) {
+        coordinator?.showLoginSignInScreen(with: .signin)
+    }
+    
     /*
     // MARK: - Navigation
 

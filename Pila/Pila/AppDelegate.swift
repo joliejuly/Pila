@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let nav = UINavigationController()
+        window?.rootViewController = nav
+        let factory = ModuleFactory()
+        coordinator = Coordinator(router: nav, factory: factory)
+        window?.makeKeyAndVisible()
+        coordinator?.start()
         return true
     }
 

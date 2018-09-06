@@ -18,7 +18,7 @@
         <!--Login And Registration View Controller-->
         <scene sceneID="IWo-GP-o10">
             <objects>
-                <viewController storyboardIdentifier="LoginAndRegistrationViewController" id="p3j-ls-hmc" customClass="LoginAndRegistrationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginAndRegistrationViewController" id="p3j-ls-hmc" customClass="LoginAndRegistrationViewController" customModule="Pila" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yuz-bH-zgk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,10 +27,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="133" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-Dr-onK">
-                                        <rect key="frame" x="40" y="18" width="240" height="34"/>
+                                        <rect key="frame" x="40" y="18.5" width="240" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-Xe-cti">
-                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="33"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,7 +40,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eH-Hj-tsr">
-                                                <rect key="frame" x="186.5" y="0.0" width="53.5" height="34"/>
+                                                <rect key="frame" x="186.5" y="0.0" width="53.5" height="33"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="Sign in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,6 +88,8 @@
                         <viewLayoutGuide key="safeArea" id="unG-aF-uym"/>
                     </view>
                     <navigationItem key="navigationItem" id="isF-wP-OUH"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="loginPeak" destination="H9r-nN-ljq" id="AFK-76-eFK"/>
                         <outlet property="loginSectionButton" destination="0Mb-Xe-cti" id="EZQ-i3-aJc"/>

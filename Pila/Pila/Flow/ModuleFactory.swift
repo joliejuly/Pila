@@ -6,17 +6,37 @@
 //  Copyright © 2018 Julia Nikitina. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class ModuleFactory {
     
-    func makeLoginSignInScreen(with selectedSection: SectionChosen) {
+    func makeLoginPromptScreen() -> LoginPromptViewController {
         
+        guard let loginPromptScreen = instantiateModule(from: .loginPrompt, withID: .loginPrompt) as? LoginPromptViewController
+        else {
+            fatalError("Cannot instantiate LoginPromptScreen")
+        }
+        
+        return loginPromptScreen
     }
     
-    func makeLoginPromptScreen() {
-        
+    
+    func makeLoginSignInScreen(with selectedSection: SectionChosen) -> LoginAndRegistrationViewController {
+        guard let loginSignInScreen = instantiateModule(from: .loginAndRegistration, withID: .loginAndRegistration) as? LoginAndRegistrationViewController
+            else {
+                fatalError("Cannot instantiate LoginPromptScreen")
+        }
+        loginSignInScreen.viewModel.sectionChosen = selectedSection
+        return loginSignInScreen
     }
+    
+   
+    
+    private func instantiateModule(from storyboard: Storyboards, withID storyboardID: StoryboardID) -> UIViewController? {
+        let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: storyboardID.rawValue)
+    }
+    
     
     
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Julia Nikitina. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class Coordinator {
     
@@ -23,13 +23,15 @@ final class Coordinator {
     }
     
     func showLoginSignInScreen(with selectedSection: SectionChosen) {
-        let loginSignInScreen = factory?.makeLoginSignInScreen(with selectedSection: SectionChosen)
-        router?.pushViewController(loginSignInScreen)
+        guard let loginSignInScreen = factory?.makeLoginSignInScreen(with: selectedSection) else { return }
+        loginSignInScreen.coordinator = self
+        router?.pushViewController(loginSignInScreen, animated: true)
     }
     
     private func showLoginPromptScreen() {
-        let loginPromptScreen = factory?.makeLoginPromptScreen()
-        router?.setViewControllers([loginPromptScreen])
+        guard let loginPromptScreen = factory?.makeLoginPromptScreen() else { return }
+        loginPromptScreen.coordinator = self
+        router?.setViewControllers([loginPromptScreen], animated: true)
     }
     
 }

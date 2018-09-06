@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum SectionChosen {
-    case login
-    case signin
-}
-
 final class LoginAndRegistrationViewController: UIViewController {
     
     @IBOutlet weak var loginPeak: UIImageView!
@@ -21,32 +16,38 @@ final class LoginAndRegistrationViewController: UIViewController {
     @IBOutlet weak var loginSectionButton: UIButton!
     @IBOutlet weak var signInSectionButton: UIButton!
     
-    private var sectionChosen: SectionChosen = .login
+    var viewModel: LoginAndRegistrationViewModel = {
+        return LoginAndRegistrationViewModel()
+    }()
     
-    init(with section: SectionChosen) {
-        sectionChosen = section
-    }
+    weak var coordinator: Coordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
-
-        // Do any additional setup after loading the view.
+        setUpViews(with: viewModel.sectionChosen)
+        setUpBindings()
     }
     
     @IBAction func loginSectionChosen(_ sender: UIButton) {
         setUpLoginView()
     }
     
-    
     @IBAction func signInSectionChosen(_ sender: UIButton) {
         setUpSignInView()
     }
     
+    private func setUpBindings() {
+        viewModel.userDidChooseSection = { [weak self] section in
+            self?.setUpViews(with: section)
+        }
+    }
     
     //MARK: - Helpers - Views setup
-    private func setUpViews() {
-        switch sectionChosen {
+    private func setUpViews(with section: SectionChosen) {
+        
+        navigationController?.navigationBar.isHidden = true
+        
+        switch section {
         case .login:
             setUpLoginView()
         case .signin:
@@ -69,5 +70,6 @@ final class LoginAndRegistrationViewController: UIViewController {
         loginSectionButton.isEnabled = true
         signInSectionButton.isEnabled = false
     }
-
+    
+    
 }
