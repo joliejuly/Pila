@@ -8,7 +8,12 @@
 
 import UIKit
 
-class LoginAndRegistrationViewController: UIViewController {
+enum SectionChosen {
+    case login
+    case signin
+}
+
+final class LoginAndRegistrationViewController: UIViewController {
     
     @IBOutlet weak var loginPeak: UIImageView!
     @IBOutlet weak var signInPeak: UIImageView!
@@ -16,12 +21,11 @@ class LoginAndRegistrationViewController: UIViewController {
     @IBOutlet weak var loginSectionButton: UIButton!
     @IBOutlet weak var signInSectionButton: UIButton!
     
-    private enum SectionChosen {
-        case login
-        case signin
-    }
-    
     private var sectionChosen: SectionChosen = .login
+    
+    init(with section: SectionChosen) {
+        sectionChosen = section
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
