@@ -51,6 +51,9 @@
 		0F7A6125214065990020CB74 /* LoginPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewModel.swift; sourceTree = "<group>"; };
 		0F7A6127214066180020CB74 /* LoginPrompt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPrompt.storyboard; sourceTree = "<group>"; };
 		0FA95E3921406E6C009FA3BF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		0FA95E3C2141A414009FA3BF /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		0FA95E3D2141A41D009FA3BF /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		0FA95E3F2141A42C009FA3BF /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 		0F7A611D214064370020CB74 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				0FA95E3B2141A3F7009FA3BF /* Fonts */,
 				0F7A60F6214064220020CB74 /* Assets.xcassets */,
 				0F7A60F8214064220020CB74 /* LaunchScreen.storyboard */,
 				0F7A60FB214064220020CB74 /* Info.plist */,
@@ -169,6 +173,16 @@
 				0F7A6125214065990020CB74 /* LoginPromptViewModel.swift */,
 			);
 			path = LoginPromptScreen;
+			sourceTree = "<group>";
+		};
+		0FA95E3B2141A3F7009FA3BF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0FA95E3D2141A41D009FA3BF /* Lato-Regular.ttf */,
+				0FA95E3F2141A42C009FA3BF /* Gilroy-ExtraBold.ttf */,
+				0FA95E3C2141A414009FA3BF /* Lato-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
