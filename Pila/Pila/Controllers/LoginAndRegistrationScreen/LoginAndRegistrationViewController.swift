@@ -9,22 +9,61 @@
 import UIKit
 
 class LoginAndRegistrationViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginPeak: UIImageView!
+    @IBOutlet weak var signInPeak: UIImageView!
+    
+    @IBOutlet weak var loginSectionButton: UIButton!
+    @IBOutlet weak var signInSectionButton: UIButton!
+    
+    private enum SectionChosen {
+        case login
+        case signin
+    }
+    
+    private var sectionChosen: SectionChosen = .login
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginSectionChosen(_ sender: UIButton) {
+        setUpLoginView()
     }
-    */
+    
+    
+    @IBAction func signInSectionChosen(_ sender: UIButton) {
+        setUpSignInView()
+    }
+    
+    
+    //MARK: - Helpers - Views setup
+    private func setUpViews() {
+        switch sectionChosen {
+        case .login:
+            setUpLoginView()
+        case .signin:
+            setUpSignInView()
+        }
+    }
+    
+    private func setUpLoginView() {
+        signInPeak.alpha = 0
+        loginPeak.alpha = 1
+        loginSectionButton.isEnabled = false
+        signInSectionButton.isEnabled = true
+        
+    }
+    
+    private func setUpSignInView() {
+        signInPeak.alpha = 1
+        loginPeak.alpha = 0
+        
+        loginSectionButton.isEnabled = true
+        signInSectionButton.isEnabled = false
+    }
 
 }

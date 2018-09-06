@@ -26,32 +26,56 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW1-1E-8VS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-Dr-onK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="133" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-Dr-onK">
                                         <rect key="frame" x="40" y="18" width="240" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-Xe-cti">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-Xe-cti">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginSectionChosen:" destination="p3j-ls-hmc" eventType="touchUpInside" id="s0y-XI-BP6"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eH-Hj-tsr">
-                                                <rect key="frame" x="187" y="0.0" width="53" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eH-Hj-tsr">
+                                                <rect key="frame" x="186.5" y="0.0" width="53.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="Sign in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signInSectionChosen:" destination="p3j-ls-hmc" eventType="touchUpInside" id="pVH-QL-Hj3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peak" translatesAutoresizingMaskIntoConstraints="NO" id="ATy-Fc-TWy" userLabel="sign_in_peak">
+                                        <rect key="frame" x="241" y="51" width="25" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Rgj-e3-Jet"/>
+                                            <constraint firstAttribute="height" constant="26" id="xvh-dh-z9L"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peak" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-nN-ljq" userLabel="login_peak">
+                                        <rect key="frame" x="54.5" y="51" width="25" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="WCA-N7-kdm"/>
+                                            <constraint firstAttribute="width" constant="25" id="lzq-40-XXY"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <constraints>
                                     <constraint firstItem="zWT-Dr-onK" firstAttribute="leading" secondItem="RW1-1E-8VS" secondAttribute="leading" constant="40" id="6ET-iX-XUB"/>
                                     <constraint firstAttribute="trailing" secondItem="zWT-Dr-onK" secondAttribute="trailing" constant="40" id="7xB-kP-iC6"/>
+                                    <constraint firstItem="H9r-nN-ljq" firstAttribute="centerX" secondItem="0Mb-Xe-cti" secondAttribute="centerX" id="CWQ-qI-0mY"/>
+                                    <constraint firstItem="ATy-Fc-TWy" firstAttribute="top" secondItem="RW1-1E-8VS" secondAttribute="top" constant="51" id="JUn-na-HaD"/>
                                     <constraint firstAttribute="height" constant="70" id="emY-Uz-Yxt"/>
+                                    <constraint firstItem="H9r-nN-ljq" firstAttribute="centerY" secondItem="ATy-Fc-TWy" secondAttribute="centerY" id="kQz-2U-WJP"/>
                                     <constraint firstItem="zWT-Dr-onK" firstAttribute="centerY" secondItem="RW1-1E-8VS" secondAttribute="centerY" id="vr9-E0-lUw"/>
+                                    <constraint firstItem="ATy-Fc-TWy" firstAttribute="centerX" secondItem="0eH-Hj-tsr" secondAttribute="centerX" id="z8w-ta-Dpy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -64,10 +88,19 @@
                         <viewLayoutGuide key="safeArea" id="unG-aF-uym"/>
                     </view>
                     <navigationItem key="navigationItem" id="isF-wP-OUH"/>
+                    <connections>
+                        <outlet property="loginPeak" destination="H9r-nN-ljq" id="AFK-76-eFK"/>
+                        <outlet property="loginSectionButton" destination="0Mb-Xe-cti" id="EZQ-i3-aJc"/>
+                        <outlet property="signInPeak" destination="ATy-Fc-TWy" id="gxB-aC-gsS"/>
+                        <outlet property="signInSectionButton" destination="0eH-Hj-tsr" id="S4t-CX-tcx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w18-CL-E6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.79999999999995" y="152.47376311844079"/>
+            <point key="canvasLocation" x="855" y="152.11267605633802"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="peak" width="42" height="36"/>
+    </resources>
 </document>
