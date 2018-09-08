@@ -8,25 +8,34 @@
 
 import UIKit
 
-final class TextFieldTableViewCell: UITableViewCell {
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+enum TextFieldType: String {
+    case email = "Email"
+    case password = "Password"
+    case firstName = "First name"
+    case lastName = "Last name"
+}
 
-    override func prepareForInterfaceBuilder() {
-        
+final class TextFieldBottomBorderView: UITableViewCell {
+    
+    @IBOutlet weak var textFieldLabel: UILabel!
+    @IBOutlet weak var textField: PilaTextField!
+    
+    
+    func configure(withFieldType type: TextFieldType) {
+        textFieldLabel.text = type.rawValue
+        textField.placeholder = type.rawValue
+        setKeyboardType(with: type)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    
-    
-    private func setUpViews() {
-        
+    private func setKeyboardType(with type: TextFieldType) {
+        switch type {
+        case .email:
+            textField.keyboardType = .emailAddress
+            textField.textContentType = UITextContentType.emailAddress
+        case .password:
+            textField.textContentType = UITextContentType.password
+        case .firstName,.lastName:
+            textField.textContentType = UITextContentType.name
+        }
     }
 }
