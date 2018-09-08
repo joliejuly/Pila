@@ -24,22 +24,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hello" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="To2-8D-XKc" customClass="PilaTextField" customModule="Pila" customModuleProvider="target">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hello" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="To2-8D-XKc" customClass="PilaTextField" customModule="Pila" customModuleProvider="target">
                         <rect key="frame" x="16" y="33" width="288" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="AQ2-I8-dMt"/>
+                            <constraint firstAttribute="width" constant="288" id="tGs-9X-iVh"/>
+                        </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                <color key="value" red="0.33333333329999998" green="0.56470588239999997" blue="0.77346845639999995" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                <color key="value" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderSize">
                                 <real key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textInset">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderHeight">
+                                <real key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomBorderColor">
+                                <color key="value" red="0.88235294117647056" green="0.93725490196078431" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="To2-8D-XKc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="1an-0s-bPP"/>
+                    <constraint firstItem="To2-8D-XKc" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="fVr-PY-cIf"/>
+                    <constraint firstItem="To2-8D-XKc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="m01-kN-E7U"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="137.59999999999999" y="154.72263868065968"/>

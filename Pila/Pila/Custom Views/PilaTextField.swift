@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 final class PilaTextField: UITextField {
-    
+
     @IBInspectable
     var placeholderColor: UIColor = .gray {
         didSet {
@@ -25,8 +25,56 @@ final class PilaTextField: UITextField {
         }
     }
     
-    override func prepareForInterfaceBuilder() {
+    @IBInspectable
+    var textInset: CGFloat = 10 {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    @IBInspectable
+    var bottomBorderColor: UIColor = .gray {
+        didSet {
+            updateBottomBorder()
+        }
+    }
+
+    private var textInsetsRect: CGRect {
+        return CGRect(x: textInset, y: 0, width: frame.width, height: frame.height)
+    }
+    
+    private var bottomBorderHeight: CGFloat = 1
+    
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUpViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUpViews()
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return textInsetsRect
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return textInsetsRect
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        updateViews()
+    }
+    
+    private func setUpViews() {
+        addBottomBorder()
+    }
+    
+    private func updateViews() {
+        setUpPlaceholder()
     }
     
     private func setUpPlaceholder() {
@@ -36,9 +84,29 @@ final class PilaTextField: UITextField {
         
         attributedPlaceholder = attributed
     }
+   
+    private func updateBottomBorder() {
+        viewWithTag(1)?.backgroundColor = bottomBorderColor
+    }
     
-    private func setUpViews() {
-         setUpPlaceholder()
+    private func addBottomBorder() {
+        let borderView = UIView()
+        
+        borderView.backgroundColor = #colorLiteral(red: 0.8630058169, green: 0.9392105937, blue: 0.9747415185, alpha: 1)
+        borderView.tag = 1
+        
+        addSubview(borderView)
+        
+        borderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraints = [
+            borderView.heightAnchor.constraint(equalToConstant: bottomBorderHeight),
+            borderView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            borderView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            borderView.topAnchor.constraint(equalTo: bottomAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
     }
 
 }
