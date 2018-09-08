@@ -26,7 +26,7 @@ final class PilaTextField: UITextField {
     }
     
     @IBInspectable
-    var textInset: CGFloat = 10 {
+    var textInset: CGFloat = 0 {
         didSet {
             updateViews()
         }
@@ -70,6 +70,10 @@ final class PilaTextField: UITextField {
     }
     
     private func setUpViews() {
+        borderStyle = .none
+        
+        font = Fonts.latoBold(size: 20)
+        
         addBottomBorder()
     }
     
