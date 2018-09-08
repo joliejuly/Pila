@@ -82,13 +82,9 @@ final class LoginAndRegistrationViewController: UIViewController {
             self.signInPeak.alpha = 1
             self.loginPeak.alpha = 0
         }
-        
-        
+
         loginSectionButton.isEnabled = true
         signInSectionButton.isEnabled = false
-        
-        
-        
     }
     
     

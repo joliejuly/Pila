@@ -84,12 +84,50 @@
                                     <constraint firstItem="ATy-Fc-TWy" firstAttribute="centerX" secondItem="0eH-Hj-tsr" secondAttribute="centerX" id="z8w-ta-Dpy"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-5e-acP">
+                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections>
+                                    <tableViewSection id="3wf-Xr-yM0">
+                                        <cells>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1Nf-3V-KZh">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Nf-3V-KZh" id="qbH-fc-o04">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2qC-CI-Ijl">
+                                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2qC-CI-Ijl" id="rqj-JM-AcV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Wee-yU-lKw">
+                                                <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wee-yU-lKw" id="Hss-cw-691">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                </sections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RW1-1E-8VS" firstAttribute="trailing" secondItem="unG-aF-uym" secondAttribute="trailing" id="E8N-nh-M2D"/>
+                            <constraint firstItem="ERh-5e-acP" firstAttribute="leading" secondItem="unG-aF-uym" secondAttribute="leading" id="IwU-ui-1Jx"/>
+                            <constraint firstItem="ERh-5e-acP" firstAttribute="bottom" secondItem="unG-aF-uym" secondAttribute="bottom" id="PtG-ka-e3B"/>
                             <constraint firstItem="RW1-1E-8VS" firstAttribute="top" secondItem="Yuz-bH-zgk" secondAttribute="top" id="Rq5-7H-6FK"/>
                             <constraint firstItem="RW1-1E-8VS" firstAttribute="leading" secondItem="unG-aF-uym" secondAttribute="leading" id="XNh-d5-GUF"/>
+                            <constraint firstItem="ERh-5e-acP" firstAttribute="top" secondItem="RW1-1E-8VS" secondAttribute="bottom" id="iND-jX-KyS"/>
+                            <constraint firstItem="ERh-5e-acP" firstAttribute="trailing" secondItem="unG-aF-uym" secondAttribute="trailing" id="vgL-Di-eDH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="unG-aF-uym"/>
                     </view>
