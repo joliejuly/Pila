@@ -16,21 +16,12 @@ enum TextFieldType: String {
 }
 
 @IBDesignable
-final class TextFieldBottomBorderView: UIView, Nibloadable {
+final class TextFieldBottomBorderView: UIView {
     
     @IBOutlet weak var textFieldLabel: UILabel!
     @IBOutlet weak var textField: PilaTextField!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupFromNib()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupFromNib()
-    }
-    
+   
     func configure(withFieldType type: TextFieldType) {
         textFieldLabel.text = type.rawValue
         textField.placeholder = type.rawValue

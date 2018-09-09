@@ -10,23 +10,22 @@ import UIKit
 
 final class LoginTableViewController: UITableViewController {
 
+    @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
+    
+    @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+        emailTextFieldView.configure(withFieldType: .email)
+    passwordTextFieldView.configure(withFieldType: .password)
+        
+        emailTextFieldView.textField.delegate = self
+        passwordTextFieldView.textField.delegate = self
+        
     }
+}
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-   
+extension LoginTableViewController: UITextFieldDelegate {
+    
 }

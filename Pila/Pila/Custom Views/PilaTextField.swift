@@ -26,26 +26,13 @@ final class PilaTextField: UITextField {
     }
     
     @IBInspectable
-    var textInset: CGFloat = 0 {
-        didSet {
-            updateViews()
-        }
-    }
-    
-    @IBInspectable
     var bottomBorderColor: UIColor = .gray {
         didSet {
             updateBottomBorder()
         }
     }
 
-    private var textInsetsRect: CGRect {
-        return CGRect(x: textInset, y: 0, width: frame.width, height: frame.height)
-    }
-    
     private var bottomBorderHeight: CGFloat = 1
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,15 +44,8 @@ final class PilaTextField: UITextField {
         setUpViews()
     }
     
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return textInsetsRect
-    }
-    
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return textInsetsRect
-    }
-    
     override func prepareForInterfaceBuilder() {
+        setUpViews()
         updateViews()
     }
     
@@ -73,6 +53,7 @@ final class PilaTextField: UITextField {
         borderStyle = .none
         
         font = Fonts.latoBold(size: 20)
+        textColor = .black
         
         addBottomBorder()
     }
