@@ -27,10 +27,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="133" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-Dr-onK">
-                                        <rect key="frame" x="40" y="18" width="240" height="34"/>
+                                        <rect key="frame" x="40" y="18.5" width="240" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-Xe-cti">
-                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="33"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,7 +43,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eH-Hj-tsr">
-                                                <rect key="frame" x="186.5" y="0.0" width="53.5" height="34"/>
+                                                <rect key="frame" x="186.5" y="0.0" width="53.5" height="33"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="Sign in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,6 +106,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w18-CL-E6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855" y="152.11267605633802"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="r06-xq-Yx0">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="tmh-Y1-G7d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuV-lx-0Tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568" y="151"/>
         </scene>
     </scenes>
     <resources>

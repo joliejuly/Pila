@@ -15,17 +15,18 @@ enum TextFieldType: String {
     case lastName = "Last name"
 }
 
+@IBDesignable
 final class TextFieldBottomBorderView: UIView {
     
     @IBOutlet weak var textFieldLabel: UILabel!
     @IBOutlet weak var textField: PilaTextField!
-    
     
     func configure(withFieldType type: TextFieldType) {
         textFieldLabel.text = type.rawValue
         textField.placeholder = type.rawValue
         setKeyboardType(with: type)
     }
+    
     
     private func setKeyboardType(with type: TextFieldType) {
         switch type {

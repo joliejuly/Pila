@@ -16,6 +16,7 @@ final class LoginAndRegistrationViewController: UIViewController {
     @IBOutlet weak var loginSectionButton: UIButton!
     @IBOutlet weak var signInSectionButton: UIButton!
     
+    
     var viewModel: LoginAndRegistrationViewModel = {
         return LoginAndRegistrationViewModel()
     }()
