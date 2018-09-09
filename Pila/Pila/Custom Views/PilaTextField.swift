@@ -10,9 +10,11 @@ import UIKit
 
 @IBDesignable
 final class PilaTextField: UITextField {
+    
+    var type: TextFieldType?
 
     @IBInspectable
-    var placeholderColor: UIColor = .gray {
+    var placeholderColor: UIColor = #colorLiteral(red: 0.1084083095, green: 0.5698664188, blue: 0.9313239455, alpha: 1) {
         didSet {
             setUpPlaceholder()
         }
@@ -29,6 +31,12 @@ final class PilaTextField: UITextField {
     var bottomBorderColor: UIColor = .gray {
         didSet {
             updateBottomBorder()
+        }
+    }
+    
+    override var placeholder: String? {
+        didSet {
+            setUpPlaceholder()
         }
     }
 
@@ -56,6 +64,7 @@ final class PilaTextField: UITextField {
         textColor = .black
         
         addBottomBorder()
+        setUpPlaceholder()
     }
     
     private func updateViews() {

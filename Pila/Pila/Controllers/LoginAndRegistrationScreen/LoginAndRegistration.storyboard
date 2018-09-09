@@ -143,18 +143,18 @@
                         <sections>
                             <tableViewSection id="hA1-Gw-yP8">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="96" id="HAA-wN-JzX">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="121" id="HAA-wN-JzX">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HAA-wN-JzX" id="wK4-pt-OwE">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw9-Mo-cCC" customClass="TextFieldBottomBorderView" customModule="Pila" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKa-2i-2NP" customClass="PilaTextField" customModule="Pila" customModuleProvider="target">
-                                                            <rect key="frame" x="12" y="25.5" width="296" height="45"/>
+                                                            <rect key="frame" x="12" y="38" width="296" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="kIa-tY-Mwf"/>
                                                             </constraints>
@@ -166,9 +166,15 @@
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-L8-PoR">
-                                                            <rect key="frame" x="12" y="4" width="35.5" height="19.5"/>
+                                                            <rect key="frame" x="12" y="4" width="35.5" height="32"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                             <color key="textColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dq-x7-Wy9">
+                                                            <rect key="frame" x="12" y="103" width="296" height="18"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                            <color key="textColor" red="0.6978759765625" green="0.0" blue="0.223876953125" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -178,11 +184,15 @@
                                                         <constraint firstItem="WWL-L8-PoR" firstAttribute="top" secondItem="Qw9-Mo-cCC" secondAttribute="top" constant="4" id="0u7-RD-rO8"/>
                                                         <constraint firstItem="WWL-L8-PoR" firstAttribute="leading" secondItem="Qw9-Mo-cCC" secondAttribute="leading" constant="12" id="5x3-Xe-Xoc"/>
                                                         <constraint firstItem="pKa-2i-2NP" firstAttribute="centerY" secondItem="Qw9-Mo-cCC" secondAttribute="centerY" id="6Bp-ZP-McD"/>
+                                                        <constraint firstItem="7Dq-x7-Wy9" firstAttribute="leading" secondItem="Qw9-Mo-cCC" secondAttribute="leading" constant="12" id="HMJ-ov-bil"/>
                                                         <constraint firstItem="pKa-2i-2NP" firstAttribute="leading" secondItem="Qw9-Mo-cCC" secondAttribute="leading" constant="12" id="KJg-HF-Rx5"/>
                                                         <constraint firstAttribute="trailing" secondItem="pKa-2i-2NP" secondAttribute="trailing" constant="12" id="QCg-iH-pgx"/>
                                                         <constraint firstItem="pKa-2i-2NP" firstAttribute="top" secondItem="WWL-L8-PoR" secondAttribute="bottom" constant="2" id="S3I-g7-8zS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7Dq-x7-Wy9" secondAttribute="trailing" constant="12" id="hbh-c2-40n"/>
+                                                        <constraint firstAttribute="bottom" secondItem="7Dq-x7-Wy9" secondAttribute="bottom" id="wVA-EA-DwV"/>
                                                     </constraints>
                                                     <connections>
+                                                        <outlet property="explainingLabel" destination="7Dq-x7-Wy9" id="fck-7U-7jS"/>
                                                         <outlet property="textField" destination="pKa-2i-2NP" id="cif-ao-HUa"/>
                                                         <outlet property="textFieldLabel" destination="WWL-L8-PoR" id="Aoj-2t-pUq"/>
                                                         <outletCollection property="gestureRecognizers" destination="2jg-ee-IC7" appends="YES" id="A29-yh-DtY"/>
@@ -198,7 +208,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="110" id="tZt-sY-BLP">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="110"/>
+                                        <rect key="frame" x="0.0" y="121" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tZt-sY-BLP" id="Aj1-Xt-jxK">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
@@ -225,18 +235,28 @@
                                                             <color key="textColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-aF-plz">
+                                                            <rect key="frame" x="12" y="84" width="296" height="18"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                            <color key="textColor" red="0.6978759766" green="0.0" blue="0.2238769531" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstItem="icq-PL-Q9f" firstAttribute="leading" secondItem="q33-wJ-e9P" secondAttribute="leading" constant="12" id="0Nj-QY-TGa"/>
+                                                        <constraint firstItem="Rvh-aF-plz" firstAttribute="leading" secondItem="q33-wJ-e9P" secondAttribute="leading" constant="12" id="2vS-bX-UFp"/>
                                                         <constraint firstItem="DYq-nJ-92r" firstAttribute="top" secondItem="icq-PL-Q9f" secondAttribute="bottom" constant="2" id="Kos-XF-Zhn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Rvh-aF-plz" secondAttribute="bottom" constant="8" id="gDL-zJ-Fhi"/>
                                                         <constraint firstItem="DYq-nJ-92r" firstAttribute="centerY" secondItem="q33-wJ-e9P" secondAttribute="centerY" id="gjv-gc-Rw4"/>
                                                         <constraint firstAttribute="trailing" secondItem="DYq-nJ-92r" secondAttribute="trailing" constant="12" id="ipn-71-V3X"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Rvh-aF-plz" secondAttribute="trailing" constant="12" id="nBF-9y-aoJ"/>
                                                         <constraint firstItem="icq-PL-Q9f" firstAttribute="top" secondItem="q33-wJ-e9P" secondAttribute="top" constant="4" id="w9B-KY-XeB"/>
                                                         <constraint firstItem="DYq-nJ-92r" firstAttribute="leading" secondItem="q33-wJ-e9P" secondAttribute="leading" constant="12" id="xI0-3H-i9B"/>
                                                     </constraints>
                                                     <connections>
+                                                        <outlet property="explainingLabel" destination="Rvh-aF-plz" id="cQ3-Uu-taT"/>
                                                         <outlet property="textField" destination="DYq-nJ-92r" id="sbc-JE-Rog"/>
                                                         <outlet property="textFieldLabel" destination="icq-PL-Q9f" id="v0a-8z-feM"/>
                                                         <outletCollection property="gestureRecognizers" destination="2jg-ee-IC7" appends="YES" id="UGh-kn-c3z"/>
