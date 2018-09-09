@@ -17,6 +17,10 @@ final class LoginAndRegistrationViewController: UIViewController {
     @IBOutlet weak var signInSectionButton: UIButton!
     
     
+    @IBOutlet weak var loginContainerView: UIView!
+    @IBOutlet weak var signInContainerView: UIView!
+    
+    
     var viewModel: LoginAndRegistrationViewModel = {
         return LoginAndRegistrationViewModel()
     }()
@@ -59,16 +63,22 @@ final class LoginAndRegistrationViewController: UIViewController {
     private func setUpLoginView(animated: Bool) {
         if animated {
             UIView.animate(withDuration: 0.4) {
+                self.loginContainerView.alpha = 1
+                self.signInContainerView.alpha = 0
                 self.signInPeak.alpha = 0
                 self.loginPeak.alpha = 1
             }
         } else {
             self.signInPeak.alpha = 0
             self.loginPeak.alpha = 1
+            self.loginContainerView.alpha = 1
+            self.signInContainerView.alpha = 0
         }
         
         loginSectionButton.isEnabled = false
         signInSectionButton.isEnabled = true
+
+        
         
     }
     
@@ -78,10 +88,16 @@ final class LoginAndRegistrationViewController: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self.signInPeak.alpha = 1
                 self.loginPeak.alpha = 0
+                
+                self.loginContainerView.alpha = 0
+                self.signInContainerView.alpha = 1
             }
         } else {
             self.signInPeak.alpha = 1
             self.loginPeak.alpha = 0
+            
+            self.loginContainerView.alpha = 0
+            self.signInContainerView.alpha = 1
         }
 
         loginSectionButton.isEnabled = true
