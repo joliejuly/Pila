@@ -17,15 +17,28 @@ final class LoginTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        passwordTextFieldView.configure(withFieldType: .password)
         emailTextFieldView.configure(withFieldType: .email)
-    passwordTextFieldView.configure(withFieldType: .password)
+        
         
         emailTextFieldView.textField.delegate = self
         passwordTextFieldView.textField.delegate = self
         
     }
+    
+    @IBAction func backroundTapped(_ sender: UITapGestureRecognizer) {
+         view.endEditing(true)
+    }
+    
+    
 }
 
 extension LoginTableViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.endEditing(true)
+    }
+    
     
 }

@@ -24,6 +24,7 @@ final class TextFieldBottomBorderView: UIView {
    
     func configure(withFieldType type: TextFieldType) {
         textFieldLabel.text = type.rawValue
+        textFieldLabel.alpha = 0
         textField.placeholder = type.rawValue
         setKeyboardType(with: type)
     }
@@ -33,11 +34,27 @@ final class TextFieldBottomBorderView: UIView {
         switch type {
         case .email:
             textField.keyboardType = .emailAddress
-            textField.textContentType = UITextContentType.emailAddress
+    
         case .password:
-            textField.textContentType = UITextContentType.password
+            textField.isSecureTextEntry = true
+            
         case .firstName,.lastName:
             textField.textContentType = UITextContentType.name
         }
+    }
+    
+    
+    @IBAction func editingChanged(_ sender: PilaTextField) {
+        
+        if sender.hasText {
+            UIView.animate(withDuration: 0.3) {
+                self.textFieldLabel.alpha = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.textFieldLabel.alpha = 0
+            }
+        }
+        
     }
 }
