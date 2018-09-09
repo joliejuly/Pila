@@ -16,7 +16,6 @@ final class LoginAndRegistrationViewController: UIViewController {
     @IBOutlet weak var loginSectionButton: UIButton!
     @IBOutlet weak var signInSectionButton: UIButton!
     
-    
     @IBOutlet weak var loginContainerView: UIView!
     @IBOutlet weak var signInContainerView: UIView!
     

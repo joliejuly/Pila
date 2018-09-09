@@ -112,8 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0F3C66152141A95400490C60 /* LoginAndRegistration.storyboard */,
-				0F3C66172141A98900490C60 /* LoginAndRegistrationViewController.swift */,
-				0F3C66192141A99800490C60 /* LoginAndRegistrationViewModel.swift */,
+				0F94BFD221456FA5000DDB67 /* ContainerScreen */,
 				0F94BFCC21456DF8000DDB67 /* LogInTableViewController */,
 				0F94BFD121456F31000DDB67 /* SigninTableViewController */,
 			);
@@ -236,6 +235,15 @@
 				0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */,
 			);
 			path = SigninTableViewController;
+			sourceTree = "<group>";
+		};
+		0F94BFD221456FA5000DDB67 /* ContainerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C66172141A98900490C60 /* LoginAndRegistrationViewController.swift */,
+				0F3C66192141A99800490C60 /* LoginAndRegistrationViewModel.swift */,
+			);
+			path = ContainerScreen;
 			sourceTree = "<group>";
 		};
 		0FA95E3B2141A3F7009FA3BF /* Fonts */ = {
