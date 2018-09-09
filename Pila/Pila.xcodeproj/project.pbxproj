@@ -26,6 +26,8 @@
 		0F7A6128214066180020CB74 /* LoginPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7A6127214066180020CB74 /* LoginPrompt.storyboard */; };
 		0F94BFAB2144097E000DDB67 /* TextFieldBottomBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFAA2144097E000DDB67 /* TextFieldBottomBorderView.swift */; };
 		0F94BFAD21440A1D000DDB67 /* TextFieldBottomBorderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F94BFAC21440A1D000DDB67 /* TextFieldBottomBorderView.xib */; };
+		0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */; };
+		0F94BFD021456E46000DDB67 /* SigninTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */; };
 		0FA95E3A21406E6C009FA3BF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA95E3921406E6C009FA3BF /* RoundedButton.swift */; };
 		0FD8A83B2143E6DD00B3BCDE /* PilaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */; };
 		0FD8A83E2143E94B00B3BCDE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8A83D2143E94B00B3BCDE /* Fonts.swift */; };
@@ -74,6 +76,8 @@
 		0F7A6127214066180020CB74 /* LoginPrompt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPrompt.storyboard; sourceTree = "<group>"; };
 		0F94BFAA2144097E000DDB67 /* TextFieldBottomBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBottomBorderView.swift; sourceTree = "<group>"; };
 		0F94BFAC21440A1D000DDB67 /* TextFieldBottomBorderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldBottomBorderView.xib; sourceTree = "<group>"; };
+		0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTableViewController.swift; sourceTree = "<group>"; };
 		0FA95E3921406E6C009FA3BF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilaTextField.swift; sourceTree = "<group>"; };
 		0FD8A83D2143E94B00B3BCDE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		0F3C66142141A8D100490C60 /* LoginAndRegistrationScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0F94BFCC21456DF8000DDB67 /* LogInTableViewController */,
 				0F3C66152141A95400490C60 /* LoginAndRegistration.storyboard */,
 				0F3C66172141A98900490C60 /* LoginAndRegistrationViewController.swift */,
 				0F3C66192141A99800490C60 /* LoginAndRegistrationViewModel.swift */,
@@ -149,7 +154,6 @@
 			children = (
 				0F7A60EF214064210020CB74 /* AppDelegate.swift */,
 				0F3C661B2141C15D00490C60 /* Flow */,
-				0F7A6121214064970020CB74 /* Models */,
 				0F7A611F2140647F0020CB74 /* Custom Views */,
 				0F7A6120214064870020CB74 /* Controllers */,
 				0FD8A83C2143E90900B3BCDE /* Constants */,
@@ -207,13 +211,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		0F7A6121214064970020CB74 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		0F7A61222140653E0020CB74 /* LoginPromptScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +219,15 @@
 				0F7A6125214065990020CB74 /* LoginPromptViewModel.swift */,
 			);
 			path = LoginPromptScreen;
+			sourceTree = "<group>";
+		};
+		0F94BFCC21456DF8000DDB67 /* LogInTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */,
+				0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */,
+			);
+			path = LogInTableViewController;
 			sourceTree = "<group>";
 		};
 		0FA95E3B2141A3F7009FA3BF /* Fonts */ = {
@@ -383,7 +389,9 @@
 				0F3C66182141A98900490C60 /* LoginAndRegistrationViewController.swift in Sources */,
 				0F7A6124214065890020CB74 /* LoginPromptViewController.swift in Sources */,
 				0F94BFAB2144097E000DDB67 /* TextFieldBottomBorderView.swift in Sources */,
+				0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */,
 				0F7A60F0214064210020CB74 /* AppDelegate.swift in Sources */,
+				0F94BFD021456E46000DDB67 /* SigninTableViewController.swift in Sources */,
 				0FD8A83B2143E6DD00B3BCDE /* PilaTextField.swift in Sources */,
 				0F3C661A2141A99800490C60 /* LoginAndRegistrationViewModel.swift in Sources */,
 				0F7A6126214065990020CB74 /* LoginPromptViewModel.swift in Sources */,

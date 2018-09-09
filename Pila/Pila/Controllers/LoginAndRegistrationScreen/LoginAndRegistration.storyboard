@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="855" y="152.11267605633802"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Login Table View Controller-->
         <scene sceneID="59M-tD-2gr">
             <objects>
-                <tableViewController id="HaY-zu-hhg" sceneMemberID="viewController">
+                <tableViewController id="HaY-zu-hhg" customClass="LoginTableViewController" customModule="Pila" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cLV-mK-zvq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,12 +178,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHA-3v-xuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="171"/>
+            <point key="canvasLocation" x="394" y="913"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Signin Table View Controller-->
         <scene sceneID="BoR-QW-urc">
             <objects>
-                <tableViewController id="5oh-uR-Zvx" sceneMemberID="viewController">
+                <tableViewController id="5oh-uR-Zvx" customClass="SigninTableViewController" customModule="Pila" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hLM-Ul-5uX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MP-nH-XDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="845"/>
+            <point key="canvasLocation" x="1318" y="913"/>
         </scene>
     </scenes>
     <resources>
