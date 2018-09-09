@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SigninTableViewController: UITableViewController {
+final class SigninTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

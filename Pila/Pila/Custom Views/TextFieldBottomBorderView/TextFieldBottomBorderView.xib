@@ -15,9 +15,14 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldBottomBorderView" customModule="Pila" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="Vgp-9Y-iu1" id="EBN-mm-CGK"/>
+                <outlet property="textFieldLabel" destination="5a6-L1-SLR" id="6J6-Sd-DeV"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TextFieldBottomBorderView" customModule="Pila" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -54,10 +59,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outlet property="textField" destination="Vgp-9Y-iu1" id="POq-5k-cLT"/>
-                <outlet property="textFieldLabel" destination="5a6-L1-SLR" id="1X9-9p-Zbs"/>
-            </connections>
         </view>
     </objects>
 </document>
