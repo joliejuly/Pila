@@ -40,29 +40,8 @@ final class LoginTableViewController: UITableViewController {
     //MARK: - Actions
     
     @IBAction func editingDidEnd(_ sender: PilaTextField) {
-        guard let type = sender.type, sender.hasText, let text = sender.text
-            else {
-                emailTextFieldView.clearIndicatorView(sender: sender)
-                return
-        }
-        
-        switch type {
-            case .email:
-                if text.isEmail {
-                    emailTextFieldView.setIndicatorViewToApproved(sender: sender)
-                    textFields.forEach { textField in
-                        if textField.type == .password {
-                            textField.becomeFirstResponder()
-                        }
-                    }
-                } else {
-                    emailTextFieldView.setErrorIndicatorView(sender: sender, errorType: .email)
-                }
-            default: break
-        }
-        
+        checkIfInputIsValid(for: sender)
     }
-    
     
     //MARK: - Helpers
     private func setUpViews() {
@@ -72,14 +51,66 @@ final class LoginTableViewController: UITableViewController {
         passwordTextFieldView.configure(withFieldType: .password)
         emailTextFieldView.configure(withFieldType: .email)
     }
+    
+    private func makeFirstResponderTextField(withType type: TextFieldType) {
+        textFields.forEach { textField in
+            if textField.type == type {
+                textField.becomeFirstResponder()
+            }
+        }
+    }
+    
+    @discardableResult
+    private func checkIfInputIsValid(for textField: UITextField) -> Bool {
+        
+        guard let sender = textField as? PilaTextField else { return false }
+        
+        guard let type = sender.type, sender.hasText, let text = sender.text
+            else {
+                emailTextFieldView.clearIndicatorView(sender: sender)
+                return false
+        }
+        
+        switch type {
+        case .email:
+            return checkEmailImputIsValid(with: text, for: sender)
+        default:
+            return true
+        }
+    }
+    
+    @discardableResult
+    private func checkEmailImputIsValid(with text: String, for sender: PilaTextField) -> Bool {
+        
+        if text.isEmail {
+            emailTextFieldView.setIndicatorViewToApproved(sender: sender)
+            return true
+        } else {
+            emailTextFieldView.setErrorIndicatorView(sender: sender, errorType: .email)
+            return false
+        }
+    }
 
 }
 
 extension LoginTableViewController: UITextFieldDelegate {
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        view.endEditing(true)
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        
+        //will focus on next text field only after email editing
+        if reason == .committed, checkIfInputIsValid(for: textField) {
+            
+            guard let sender = textField as? PilaTextField else { return }
+            
+            if sender.type == .email {
+                 makeFirstResponderTextField(withType: .password)
+            }
+        }
     }
     
+    //will keep user on the same text field until he enters valid email
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return checkIfInputIsValid(for: textField)
+    }
     
 }
