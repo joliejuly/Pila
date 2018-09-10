@@ -120,6 +120,8 @@ final class PilaTextField: UITextField {
     private func addBottomIndicatorBorder() {
         let indicatorBorderView = UIView()
         
+        //UIProgressView
+        
         indicatorBorderView.backgroundColor = bottomIndicatorBorderColor
         indicatorBorderView.tag = 2
         

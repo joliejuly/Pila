@@ -78,7 +78,7 @@ final class LoginAndRegistrationViewController: UIViewController {
         signInSectionButton.isEnabled = true
 
         
-        
+        view.endEditing(true)
     }
     
     private func setUpSignInView(animated: Bool) {
@@ -101,6 +101,8 @@ final class LoginAndRegistrationViewController: UIViewController {
 
         loginSectionButton.isEnabled = true
         signInSectionButton.isEnabled = false
+        
+        view.endEditing(true)
     }
     
     
