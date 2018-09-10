@@ -174,9 +174,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dq-x7-Wy9">
-                                                            <rect key="frame" x="12" y="103" width="296" height="18"/>
+                                                            <rect key="frame" x="12" y="88" width="296" height="18"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                                                            <color key="textColor" red="0.6978759765625" green="0.0" blue="0.223876953125" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -188,10 +188,10 @@
                                                         <constraint firstItem="pKa-2i-2NP" firstAttribute="centerY" secondItem="Qw9-Mo-cCC" secondAttribute="centerY" id="6Bp-ZP-McD"/>
                                                         <constraint firstItem="7Dq-x7-Wy9" firstAttribute="leading" secondItem="Qw9-Mo-cCC" secondAttribute="leading" constant="12" id="HMJ-ov-bil"/>
                                                         <constraint firstItem="pKa-2i-2NP" firstAttribute="leading" secondItem="Qw9-Mo-cCC" secondAttribute="leading" constant="12" id="KJg-HF-Rx5"/>
+                                                        <constraint firstItem="7Dq-x7-Wy9" firstAttribute="top" secondItem="pKa-2i-2NP" secondAttribute="bottom" constant="5" id="Mrz-BC-leS"/>
                                                         <constraint firstAttribute="trailing" secondItem="pKa-2i-2NP" secondAttribute="trailing" constant="12" id="QCg-iH-pgx"/>
                                                         <constraint firstItem="pKa-2i-2NP" firstAttribute="top" secondItem="WWL-L8-PoR" secondAttribute="bottom" constant="2" id="S3I-g7-8zS"/>
                                                         <constraint firstAttribute="trailing" secondItem="7Dq-x7-Wy9" secondAttribute="trailing" constant="12" id="hbh-c2-40n"/>
-                                                        <constraint firstAttribute="bottom" secondItem="7Dq-x7-Wy9" secondAttribute="bottom" id="wVA-EA-DwV"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="explainingLabel" destination="7Dq-x7-Wy9" id="fck-7U-7jS"/>
@@ -240,9 +240,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-aF-plz">
-                                                            <rect key="frame" x="12" y="84" width="296" height="18"/>
+                                                            <rect key="frame" x="12" y="82.5" width="296" height="18"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                                                            <color key="textColor" red="0.6978759766" green="0.0" blue="0.2238769531" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -252,7 +252,7 @@
                                                         <constraint firstItem="icq-PL-Q9f" firstAttribute="leading" secondItem="q33-wJ-e9P" secondAttribute="leading" constant="12" id="0Nj-QY-TGa"/>
                                                         <constraint firstItem="Rvh-aF-plz" firstAttribute="leading" secondItem="q33-wJ-e9P" secondAttribute="leading" constant="12" id="2vS-bX-UFp"/>
                                                         <constraint firstItem="DYq-nJ-92r" firstAttribute="top" secondItem="icq-PL-Q9f" secondAttribute="bottom" constant="2" id="Kos-XF-Zhn"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Rvh-aF-plz" secondAttribute="bottom" constant="8" id="gDL-zJ-Fhi"/>
+                                                        <constraint firstItem="Rvh-aF-plz" firstAttribute="top" secondItem="DYq-nJ-92r" secondAttribute="bottom" constant="5" id="OV4-B7-DC5"/>
                                                         <constraint firstItem="DYq-nJ-92r" firstAttribute="centerY" secondItem="q33-wJ-e9P" secondAttribute="centerY" id="gjv-gc-Rw4"/>
                                                         <constraint firstAttribute="trailing" secondItem="DYq-nJ-92r" secondAttribute="trailing" constant="12" id="ipn-71-V3X"/>
                                                         <constraint firstAttribute="trailing" secondItem="Rvh-aF-plz" secondAttribute="trailing" constant="12" id="nBF-9y-aoJ"/>

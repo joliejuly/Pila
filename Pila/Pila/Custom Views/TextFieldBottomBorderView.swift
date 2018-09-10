@@ -40,6 +40,7 @@ final class TextFieldBottomBorderView: UIView {
         textField.returnKeyType = .continue
         textField.enablesReturnKeyAutomatically = true
         
+        explainingLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         setUpAccessoryView()
     }
     
@@ -92,7 +93,9 @@ final class TextFieldBottomBorderView: UIView {
             if text.isEmail {
                 explainingLabel.isHidden = true
                 sender.bottomIndicatorBorderColor = #colorLiteral(red: 0, green: 0.7932798266, blue: 0.6872220635, alpha: 1)
+                sender.bottomIndicatorProgress = 1.0
             } else {
+                sender.bottomIndicatorProgress = 0.7
                 sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
                 explainingLabel.isHidden = false
                 explainingLabel.text = "Something is wrong with your email input"
@@ -107,7 +110,8 @@ final class TextFieldBottomBorderView: UIView {
     
     
     private func clearIndicatorView(sender: PilaTextField) {
-        sender.bottomIndicatorBorderColor = .clear
+        //sender.bottomIndicatorBorderColor = .clear
+        sender.bottomIndicatorProgress = 0.0
         explainingLabel.isHidden = true
     }
     

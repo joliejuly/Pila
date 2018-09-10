@@ -11,9 +11,9 @@ import UIKit
 final class LoginTableViewController: UITableViewController {
 
     @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
-    
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
-    
+   
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +21,6 @@ final class LoginTableViewController: UITableViewController {
 
         emailTextFieldView.textField.delegate = self
         passwordTextFieldView.textField.delegate = self
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -29,6 +28,18 @@ final class LoginTableViewController: UITableViewController {
         view.endEditing(true)
     }
     
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+    
+    //MARK: - Actions
+    @IBAction func backroundTapped(_ sender: UITapGestureRecognizer) {
+         view.endEditing(true)
+    }
+    
+    
+    //MARK: - Helpers
     private func setUpViews() {
         
         UIApplication.shared.statusBarView?.backgroundColor = #colorLiteral(red: 0.1084083095, green: 0.5698664188, blue: 0.9313239455, alpha: 1)
@@ -36,13 +47,7 @@ final class LoginTableViewController: UITableViewController {
         passwordTextFieldView.configure(withFieldType: .password)
         emailTextFieldView.configure(withFieldType: .email)
     }
-    
-    
-    @IBAction func backroundTapped(_ sender: UITapGestureRecognizer) {
-         view.endEditing(true)
-    }
-    
-    
+
 }
 
 extension LoginTableViewController: UITextFieldDelegate {
