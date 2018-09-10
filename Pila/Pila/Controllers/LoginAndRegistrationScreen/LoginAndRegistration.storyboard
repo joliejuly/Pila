@@ -163,8 +163,8 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                             <connections>
                                                                 <action selector="editingChanged:" destination="Qw9-Mo-cCC" eventType="editingChanged" id="8Nq-ut-NOi"/>
-                                                                <action selector="editingDidEnd:" destination="Qw9-Mo-cCC" eventType="editingDidEndOnExit" id="64a-YT-dQ1"/>
-                                                                <action selector="editingDidEnd:" destination="Qw9-Mo-cCC" eventType="editingDidEnd" id="9ak-Vo-gFH"/>
+                                                                <action selector="editingDidEnd:" destination="HaY-zu-hhg" eventType="editingDidEnd" id="lIu-Bf-Wyb"/>
+                                                                <action selector="editingDidEnd:" destination="HaY-zu-hhg" eventType="editingDidEndOnExit" id="mZM-dJ-UxZ"/>
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-L8-PoR">
@@ -197,7 +197,7 @@
                                                         <outlet property="explainingLabel" destination="7Dq-x7-Wy9" id="fck-7U-7jS"/>
                                                         <outlet property="textField" destination="pKa-2i-2NP" id="cif-ao-HUa"/>
                                                         <outlet property="textFieldLabel" destination="WWL-L8-PoR" id="Aoj-2t-pUq"/>
-                                                        <outletCollection property="gestureRecognizers" destination="2jg-ee-IC7" appends="YES" id="A29-yh-DtY"/>
+                                                        <outletCollection property="textFields" destination="pKa-2i-2NP" collectionClass="NSMutableArray" id="KGn-9q-BFm"/>
                                                     </connections>
                                                 </view>
                                             </subviews>
@@ -229,8 +229,8 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                             <connections>
                                                                 <action selector="editingChanged:" destination="q33-wJ-e9P" eventType="editingChanged" id="e7i-JI-VQG"/>
-                                                                <action selector="editingDidEnd:" destination="q33-wJ-e9P" eventType="editingDidEnd" id="bvQ-6O-5nv"/>
-                                                                <action selector="editingDidEnd:" destination="q33-wJ-e9P" eventType="editingDidEndOnExit" id="e7Z-oN-Ipq"/>
+                                                                <action selector="editingDidEnd:" destination="HaY-zu-hhg" eventType="editingDidEnd" id="24z-PX-U59"/>
+                                                                <action selector="editingDidEnd:" destination="HaY-zu-hhg" eventType="editingDidEndOnExit" id="UuJ-2r-WvU"/>
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icq-PL-Q9f">
@@ -263,7 +263,7 @@
                                                         <outlet property="explainingLabel" destination="Rvh-aF-plz" id="cQ3-Uu-taT"/>
                                                         <outlet property="textField" destination="DYq-nJ-92r" id="sbc-JE-Rog"/>
                                                         <outlet property="textFieldLabel" destination="icq-PL-Q9f" id="v0a-8z-feM"/>
-                                                        <outletCollection property="gestureRecognizers" destination="2jg-ee-IC7" appends="YES" id="UGh-kn-c3z"/>
+                                                        <outletCollection property="textFields" destination="DYq-nJ-92r" collectionClass="NSMutableArray" id="tjv-0H-miD"/>
                                                     </connections>
                                                 </view>
                                             </subviews>
@@ -286,14 +286,11 @@
                     <connections>
                         <outlet property="emailTextFieldView" destination="Qw9-Mo-cCC" id="eWb-U9-aAc"/>
                         <outlet property="passwordTextFieldView" destination="q33-wJ-e9P" id="RzL-1c-Nss"/>
+                        <outletCollection property="textFields" destination="DYq-nJ-92r" collectionClass="NSMutableArray" id="tcq-nR-UNb"/>
+                        <outletCollection property="textFields" destination="pKa-2i-2NP" collectionClass="NSMutableArray" id="2xU-h0-Fi9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHA-3v-xuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="2jg-ee-IC7">
-                    <connections>
-                        <action selector="backroundTapped:" destination="HaY-zu-hhg" id="rgB-Yx-Hx0"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="401.25" y="923.23943661971828"/>
         </scene>

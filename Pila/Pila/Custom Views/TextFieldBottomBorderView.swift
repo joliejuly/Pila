@@ -15,12 +15,21 @@ enum TextFieldType: String {
     case lastName = "Last name"
 }
 
+enum TextFieldInputError: String {
+    case email = "Something is wrong with your email input"
+    case password = "Password"
+    case firstName = "First name"
+    case lastName = "Last name"
+}
+
 @IBDesignable
 final class TextFieldBottomBorderView: UIView {
     
     @IBOutlet weak var textFieldLabel: UILabel!
     @IBOutlet weak var textField: PilaTextField!
     @IBOutlet weak var explainingLabel: UILabel!
+    
+    @IBOutlet var textFields: [PilaTextField]!
    
     func configure(withFieldType type: TextFieldType) {
         textFieldLabel.text = type.rawValue
@@ -57,9 +66,15 @@ final class TextFieldBottomBorderView: UIView {
             textField.keyboardType = .emailAddress
     
         case .password:
+            textField.keyboardType = .asciiCapable
             textField.isSecureTextEntry = true
             
-        case .firstName,.lastName:
+        case .firstName:
+            textField.keyboardType = .asciiCapable
+            textField.textContentType = UITextContentType.name
+            
+        case .lastName:
+            textField.keyboardType = .asciiCapable
             textField.textContentType = UITextContentType.name
         }
     }
@@ -79,38 +94,22 @@ final class TextFieldBottomBorderView: UIView {
             }
         }
     }
-    
-    
-    @IBAction func editingDidEnd(_ sender: PilaTextField) {
-        guard let type = sender.type, sender.hasText, let text = sender.text
-            else {
-                clearIndicatorView(sender: sender)
-                return
-            }
-        
-        switch type {
-        case .email:
-            if text.isEmail {
-                explainingLabel.isHidden = true
-                sender.bottomIndicatorBorderColor = #colorLiteral(red: 0, green: 0.7932798266, blue: 0.6872220635, alpha: 1)
-                sender.bottomIndicatorProgress = 1.0
-            } else {
-                sender.bottomIndicatorProgress = 0.7
-                sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
-                explainingLabel.isHidden = false
-                explainingLabel.text = "Something is wrong with your email input"
-            }
-            
-        default: break
-        }
-        
+
+    //these functions are to be called from concrete view controller
+    public func setIndicatorViewToApproved(sender: PilaTextField) {
+        explainingLabel.isHidden = true
+        sender.bottomIndicatorBorderColor = #colorLiteral(red: 0, green: 0.7932798266, blue: 0.6872220635, alpha: 1)
+        sender.bottomIndicatorProgress = 1.0
     }
     
+    public func setErrorIndicatorView(sender: PilaTextField, errorType: TextFieldInputError) {
+        sender.bottomIndicatorProgress = 0.7
+        sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
+        explainingLabel.isHidden = false
+        explainingLabel.text = errorType.rawValue
+    }
     
-    
-    
-    private func clearIndicatorView(sender: PilaTextField) {
-        //sender.bottomIndicatorBorderColor = .clear
+    public func clearIndicatorView(sender: PilaTextField) {
         sender.bottomIndicatorProgress = 0.0
         explainingLabel.isHidden = true
     }

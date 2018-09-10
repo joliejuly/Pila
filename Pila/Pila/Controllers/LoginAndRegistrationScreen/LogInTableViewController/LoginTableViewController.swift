@@ -12,6 +12,10 @@ final class LoginTableViewController: UITableViewController {
 
     @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
+    
+    
+    @IBOutlet var textFields: [PilaTextField]!
+    
    
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -34,8 +38,29 @@ final class LoginTableViewController: UITableViewController {
     }
     
     //MARK: - Actions
-    @IBAction func backroundTapped(_ sender: UITapGestureRecognizer) {
-         view.endEditing(true)
+    
+    @IBAction func editingDidEnd(_ sender: PilaTextField) {
+        guard let type = sender.type, sender.hasText, let text = sender.text
+            else {
+                emailTextFieldView.clearIndicatorView(sender: sender)
+                return
+        }
+        
+        switch type {
+            case .email:
+                if text.isEmail {
+                    emailTextFieldView.setIndicatorViewToApproved(sender: sender)
+                    textFields.forEach { textField in
+                        if textField.type == .password {
+                            textField.becomeFirstResponder()
+                        }
+                    }
+                } else {
+                    emailTextFieldView.setErrorIndicatorView(sender: sender, errorType: .email)
+                }
+            default: break
+        }
+        
     }
     
     
