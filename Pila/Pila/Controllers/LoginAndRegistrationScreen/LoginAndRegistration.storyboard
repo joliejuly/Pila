@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW1-1E-8VS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="133" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-Dr-onK">
                                         <rect key="frame" x="40" y="18" width="240" height="34"/>
@@ -88,13 +88,13 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqC-EI-HuY">
-                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="458"/>
                                 <connections>
                                     <segue destination="HaY-zu-hhg" kind="embed" id="eqQ-Ig-6eo"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwx-Is-tYZ">
-                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="458"/>
                                 <connections>
                                     <segue destination="5oh-uR-Zvx" kind="embed" id="VBR-Sc-ue4"/>
                                 </connections>
@@ -106,7 +106,7 @@
                             <constraint firstItem="RW1-1E-8VS" firstAttribute="trailing" secondItem="o7R-6L-6aO" secondAttribute="trailing" id="E8N-nh-M2D"/>
                             <constraint firstItem="JqC-EI-HuY" firstAttribute="leading" secondItem="o7R-6L-6aO" secondAttribute="leading" id="Igh-vR-G0k"/>
                             <constraint firstItem="JqC-EI-HuY" firstAttribute="bottom" secondItem="o7R-6L-6aO" secondAttribute="bottom" id="Qgl-sx-1zw"/>
-                            <constraint firstItem="RW1-1E-8VS" firstAttribute="top" secondItem="Yuz-bH-zgk" secondAttribute="top" id="Rq5-7H-6FK"/>
+                            <constraint firstItem="RW1-1E-8VS" firstAttribute="top" secondItem="o7R-6L-6aO" secondAttribute="top" id="Rq5-7H-6FK"/>
                             <constraint firstItem="Iwx-Is-tYZ" firstAttribute="top" secondItem="RW1-1E-8VS" secondAttribute="bottom" constant="20" id="SvK-sZ-kqU"/>
                             <constraint firstItem="JqC-EI-HuY" firstAttribute="trailing" secondItem="o7R-6L-6aO" secondAttribute="trailing" id="WVC-XF-PTE"/>
                             <constraint firstItem="RW1-1E-8VS" firstAttribute="leading" secondItem="o7R-6L-6aO" secondAttribute="leading" id="XNh-d5-GUF"/>
@@ -137,7 +137,7 @@
             <objects>
                 <tableViewController id="HaY-zu-hhg" customClass="LoginTableViewController" customModule="Pila" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cLV-mK-zvq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="458"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -163,6 +163,8 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                             <connections>
                                                                 <action selector="editingChanged:" destination="Qw9-Mo-cCC" eventType="editingChanged" id="8Nq-ut-NOi"/>
+                                                                <action selector="editingDidEnd:" destination="Qw9-Mo-cCC" eventType="editingDidEndOnExit" id="64a-YT-dQ1"/>
+                                                                <action selector="editingDidEnd:" destination="Qw9-Mo-cCC" eventType="editingDidEnd" id="9ak-Vo-gFH"/>
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-L8-PoR">
@@ -227,6 +229,8 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                             <connections>
                                                                 <action selector="editingChanged:" destination="q33-wJ-e9P" eventType="editingChanged" id="e7i-JI-VQG"/>
+                                                                <action selector="editingDidEnd:" destination="q33-wJ-e9P" eventType="editingDidEnd" id="bvQ-6O-5nv"/>
+                                                                <action selector="editingDidEnd:" destination="q33-wJ-e9P" eventType="editingDidEndOnExit" id="e7Z-oN-Ipq"/>
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icq-PL-Q9f">
@@ -298,7 +302,7 @@
             <objects>
                 <tableViewController id="5oh-uR-Zvx" customClass="SigninTableViewController" customModule="Pila" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hLM-Ul-5uX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="458"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>

@@ -17,15 +17,26 @@ final class LoginTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        passwordTextFieldView.configure(withFieldType: .password)
-        emailTextFieldView.configure(withFieldType: .email)
-        
-        
+        setUpViews()
+
         emailTextFieldView.textField.delegate = self
         passwordTextFieldView.textField.delegate = self
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+    }
+    
+    private func setUpViews() {
+        
+        UIApplication.shared.statusBarView?.backgroundColor = #colorLiteral(red: 0.1084083095, green: 0.5698664188, blue: 0.9313239455, alpha: 1)
+        
+        passwordTextFieldView.configure(withFieldType: .password)
+        emailTextFieldView.configure(withFieldType: .email)
+    }
+    
     
     @IBAction func backroundTapped(_ sender: UITapGestureRecognizer) {
          view.endEditing(true)

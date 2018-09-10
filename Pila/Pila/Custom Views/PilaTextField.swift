@@ -12,6 +12,9 @@ import UIKit
 final class PilaTextField: UITextField {
     
     var type: TextFieldType?
+    
+    private var bottomBorderHeight: CGFloat = 1
+    private var bottomIndicatorBorderHeight: CGFloat = 3
 
     @IBInspectable
     var placeholderColor: UIColor = #colorLiteral(red: 0.1084083095, green: 0.5698664188, blue: 0.9313239455, alpha: 1) {
@@ -34,14 +37,19 @@ final class PilaTextField: UITextField {
         }
     }
     
+    @IBInspectable
+    var bottomIndicatorBorderColor: UIColor = .clear {
+        didSet {
+            updateIndicatorBottomBorder()
+        }
+    }
+    
     override var placeholder: String? {
         didSet {
             setUpPlaceholder()
         }
     }
 
-    private var bottomBorderHeight: CGFloat = 1
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpViews()
@@ -64,6 +72,7 @@ final class PilaTextField: UITextField {
         textColor = .black
         
         addBottomBorder()
+        addBottomIndicatorBorder()
         setUpPlaceholder()
     }
     
@@ -83,6 +92,11 @@ final class PilaTextField: UITextField {
         viewWithTag(1)?.backgroundColor = bottomBorderColor
     }
     
+    private func updateIndicatorBottomBorder() {
+        viewWithTag(2)?.backgroundColor = bottomIndicatorBorderColor
+    }
+    
+    
     private func addBottomBorder() {
         let borderView = UIView()
         
@@ -98,6 +112,28 @@ final class PilaTextField: UITextField {
             borderView.leadingAnchor.constraint(equalTo: leadingAnchor),
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor),
             borderView.topAnchor.constraint(equalTo: bottomAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    private func addBottomIndicatorBorder() {
+        let indicatorBorderView = UIView()
+        
+        indicatorBorderView.backgroundColor = bottomIndicatorBorderColor
+        indicatorBorderView.tag = 2
+        
+        guard let borderView = viewWithTag(1) else { return }
+        
+        addSubview(indicatorBorderView)
+        
+        indicatorBorderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraints = [
+            indicatorBorderView.heightAnchor.constraint(equalToConstant: bottomIndicatorBorderHeight),
+            indicatorBorderView.leadingAnchor.constraint(equalTo: borderView.leadingAnchor),
+            indicatorBorderView.widthAnchor.constraint(equalTo: borderView.widthAnchor, constant: -120),
+            indicatorBorderView.bottomAnchor.constraint(equalTo: borderView.topAnchor)
         ]
         
         NSLayoutConstraint.activate(constraints)

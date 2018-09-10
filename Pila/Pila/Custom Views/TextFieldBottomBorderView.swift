@@ -24,15 +24,33 @@ final class TextFieldBottomBorderView: UIView {
    
     func configure(withFieldType type: TextFieldType) {
         textFieldLabel.text = type.rawValue
-        textFieldLabel.alpha = 0
+        
         textField.placeholder = type.rawValue
         textField.type = type
         setKeyboardType(with: type)
-        explainingLabel.isHidden = true
+        
+        setUpViews()
     }
     
+    private func setUpViews() {
+        explainingLabel.isHidden = true
+        textFieldLabel.alpha = 0
+        
+        textField.keyboardAppearance = .dark
+        textField.returnKeyType = .continue
+        textField.enablesReturnKeyAutomatically = true
+        
+        setUpAccessoryView()
+    }
+    
+    private func setUpAccessoryView() {
+        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 10))
+        keyboardView.backgroundColor = #colorLiteral(red: 0.1084083095, green: 0.5698664188, blue: 0.9313239455, alpha: 1)
+        textField.inputAccessoryView = keyboardView
+    }
     
     private func setKeyboardType(with type: TextFieldType) {
+
         switch type {
         case .email:
             textField.keyboardType = .emailAddress
@@ -48,6 +66,8 @@ final class TextFieldBottomBorderView: UIView {
     
     @IBAction func editingChanged(_ sender: PilaTextField) {
         
+        clearIndicatorView(sender: sender)
+        
         if sender.hasText {
             UIView.animate(withDuration: 0.3) {
                 self.textFieldLabel.alpha = 1
@@ -57,16 +77,23 @@ final class TextFieldBottomBorderView: UIView {
                 self.textFieldLabel.alpha = 0
             }
         }
-        
-        guard let type = sender.type, let text = sender.text else { return }
+    }
+    
+    
+    @IBAction func editingDidEnd(_ sender: PilaTextField) {
+        guard let type = sender.type, sender.hasText, let text = sender.text
+            else {
+                clearIndicatorView(sender: sender)
+                return
+            }
         
         switch type {
         case .email:
             if text.isEmail {
                 explainingLabel.isHidden = true
-                sender.bottomBorderColor = #colorLiteral(red: 0.8630058169, green: 0.9392105937, blue: 0.9747415185, alpha: 1)
+                sender.bottomIndicatorBorderColor = #colorLiteral(red: 0, green: 0.7932798266, blue: 0.6872220635, alpha: 1)
             } else {
-                sender.bottomBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
+                sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
                 explainingLabel.isHidden = false
                 explainingLabel.text = "Something is wrong with your email input"
             }
@@ -74,6 +101,15 @@ final class TextFieldBottomBorderView: UIView {
         default: break
         }
         
-        
     }
+    
+    
+    
+    
+    private func clearIndicatorView(sender: PilaTextField) {
+        sender.bottomIndicatorBorderColor = .clear
+        explainingLabel.isHidden = true
+    }
+    
+    
 }
