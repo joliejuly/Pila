@@ -13,10 +13,8 @@ final class LoginTableViewController: UITableViewController {
     @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
     
-    
     @IBOutlet var textFields: [PilaTextField]!
     
-   
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()

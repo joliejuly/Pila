@@ -25,6 +25,11 @@ final class RoundedButton: UIButton {
         }
     }
 
+    override func setTitle(_ title: String?, for state: UIControl.State) {
+        
+       
+    }
+    
     override func prepareForInterfaceBuilder() {
         setUpView()
     }
@@ -35,5 +40,12 @@ final class RoundedButton: UIButton {
 
     private func setUpView() {
         layer.cornerRadius = frame.height / 2
+        
+        guard let textForTitle = title(for: .normal) else { return }
+        
+        let attrTitle = NSAttributedString(string: textForTitle, attributes: [.font: Fonts.latoBold(size: 20)])
+        
+        setAttributedTitle(attrTitle, for: .normal)
+        
     }
 }
