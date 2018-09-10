@@ -13,6 +13,8 @@ final class PilaTextField: UITextField {
     
     var type: TextFieldType?
     
+    private var bottomProgressView: UIProgressView?
+    
     private var bottomBorderHeight: CGFloat = 1
     private var bottomIndicatorBorderHeight: CGFloat = 3
 
@@ -44,6 +46,13 @@ final class PilaTextField: UITextField {
         }
     }
     
+    @IBInspectable
+    var bottomIndicatorProgress: Float = 0.5 {
+        didSet {
+            updateIndicatorBottomBorder()
+        }
+    }
+    
     override var placeholder: String? {
         didSet {
             setUpPlaceholder()
@@ -64,6 +73,10 @@ final class PilaTextField: UITextField {
         setUpViews()
         updateViews()
     }
+}
+
+//MARK: - Helpers
+extension PilaTextField {
     
     private func setUpViews() {
         borderStyle = .none
@@ -87,13 +100,15 @@ final class PilaTextField: UITextField {
         
         attributedPlaceholder = attributed
     }
-   
+    
     private func updateBottomBorder() {
         viewWithTag(1)?.backgroundColor = bottomBorderColor
     }
     
     private func updateIndicatorBottomBorder() {
-        viewWithTag(2)?.backgroundColor = bottomIndicatorBorderColor
+        
+        bottomProgressView?.progressTintColor = bottomIndicatorBorderColor
+        bottomProgressView?.progress = bottomIndicatorProgress
     }
     
     
@@ -118,11 +133,11 @@ final class PilaTextField: UITextField {
     }
     
     private func addBottomIndicatorBorder() {
-        let indicatorBorderView = UIView()
+        bottomProgressView = UIProgressView(progressViewStyle: .bar)
         
-        //UIProgressView
+        guard let indicatorBorderView = bottomProgressView else { return }
         
-        indicatorBorderView.backgroundColor = bottomIndicatorBorderColor
+        indicatorBorderView.progressTintColor = bottomIndicatorBorderColor
         indicatorBorderView.tag = 2
         
         guard let borderView = viewWithTag(1) else { return }
@@ -134,7 +149,7 @@ final class PilaTextField: UITextField {
         let constraints = [
             indicatorBorderView.heightAnchor.constraint(equalToConstant: bottomIndicatorBorderHeight),
             indicatorBorderView.leadingAnchor.constraint(equalTo: borderView.leadingAnchor),
-            indicatorBorderView.widthAnchor.constraint(equalTo: borderView.widthAnchor, constant: -120),
+            indicatorBorderView.trailingAnchor.constraint(equalTo: borderView.trailingAnchor),
             indicatorBorderView.bottomAnchor.constraint(equalTo: borderView.topAnchor)
         ]
         
