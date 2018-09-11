@@ -10,7 +10,8 @@ import Foundation
 
 extension String {
     
-    var latinCharactersOnly: Bool {
+    //checking first and last name
+    public var latinCharactersOnly: Bool {
         return self.range(of: "\\P{Latin}", options: .regularExpression) == nil
     }
 
@@ -23,5 +24,40 @@ extension String {
         let predicate = NSPredicate(format: "SELF MATCHES %@", type(of:self).emailRegex)
         return predicate.evaluate(with: self)
     }
+    
+    //checking password
+    //we use float to display it later in UIProgress indicator that uses Float from 0.0 to 1.0
+    public var strengthOfPassword: Float {
+        let numberOfCharacters = self.count
+        
+        switch numberOfCharacters {
+        case 0...6: return 0.2
+        default:
+            
+            if self.latinCharactersOnly {
+                return 0.6
+            }
+            
+            for character in self {
+                guard let scalarCharacter = character.unicodeScalars.first else { return 0.6 }
+                
+                if CharacterSet.uppercaseLetters.contains(scalarCharacter) {
+                    return 0.8
+                }
+                
+                if CharacterSet(charactersIn: "0123456789").contains(scalarCharacter) {
+                    return 0.8
+                }
+                
+                if CharacterSet.punctuationCharacters.contains(scalarCharacter) {
+                    return 0.8
+                }
+            }
+        
+            return 0.6
+        }
+    }
+    
+    
     
 }

@@ -17,9 +17,9 @@ enum TextFieldType: String {
 
 enum TextFieldInputError: String {
     case email = "Something is wrong with your email input"
-    case password = "Password"
-    case firstName = "First name"
-    case lastName = "Last name"
+    case weakPassword = "Password is too weak"
+    case notSafePassword = "It's recommended that you add digits and uppercase letters to your password"
+    case names = "Please, enter only latin characters"
 }
 
 @IBDesignable
@@ -67,14 +67,13 @@ final class TextFieldBottomBorderView: UIView {
         case .password:
             textField.keyboardType = .asciiCapable
             textField.isSecureTextEntry = true
+            textField.clearsOnInsertion = false
             
         case .firstName:
             textField.keyboardType = .asciiCapable
-            textField.textContentType = UITextContentType.name
             
         case .lastName:
             textField.keyboardType = .asciiCapable
-            textField.textContentType = UITextContentType.name
         }
     }
     
@@ -102,10 +101,21 @@ final class TextFieldBottomBorderView: UIView {
     }
     
     public func setErrorIndicatorView(sender: PilaTextField, errorType: TextFieldInputError) {
+        
         sender.bottomIndicatorProgress = 0.7
         sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
         explainingLabel.isHidden = false
         explainingLabel.text = errorType.rawValue
+        
+        if errorType == .notSafePassword {
+            sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        }
+        
+        if errorType == .weakPassword {
+            sender.bottomIndicatorProgress = 0.4
+        }
+        
+        
     }
     
     public func clearIndicatorView(sender: PilaTextField) {
@@ -128,9 +138,40 @@ final class TextFieldBottomBorderView: UIView {
         switch type {
         case .email:
             return checkEmailImputIsValid(with: text, for: sender)
+        case .firstName, .lastName:
+            return checkNamesImputIsValid(with: text, for: sender)
+        case .password:
+            return checkPasswordStrength(with: text, for: sender)
+        }
+    }
+    
+    @discardableResult
+    private func checkNamesImputIsValid(with text: String, for sender: PilaTextField) -> Bool {
+        
+        if text.latinCharactersOnly {
+            setIndicatorViewToApproved(sender: sender)
+            return true
+        } else {
+            setErrorIndicatorView(sender: sender, errorType: .names)
+            return false
+        }
+    }
+    
+    private func checkPasswordStrength(with text: String, for sender: PilaTextField) -> Bool {
+        switch text.strengthOfPassword {
+        case 0.0...0.5:
+            setErrorIndicatorView(sender: sender, errorType: .weakPassword)
+            return false
+        case 0.6...0.7:
+            setErrorIndicatorView(sender: sender, errorType: .notSafePassword)
+            return true
+        case 0.8...1.0:
+            setIndicatorViewToApproved(sender: sender)
+            return true
         default:
             return true
         }
+        
     }
     
     @discardableResult
