@@ -10,14 +10,21 @@ import UIKit
 
 final class SigninTableViewController: UITableViewController {
 
+    @IBOutlet weak var firstNameTextFieldView: TextFieldBottomBorderView!
+    @IBOutlet weak var lastNameTextFieldView: TextFieldBottomBorderView!
+    @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
+    @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setUpTextFieldViews()
+    }
+    
+    private func setUpTextFieldViews() {
+        firstNameTextFieldView.configure(withFieldType: .firstName)
+        lastNameTextFieldView.configure(withFieldType: .lastName)
+        emailTextFieldView.configure(withFieldType: .email)
+        passwordTextFieldView.configure(withFieldType: .password)
     }
 
    

@@ -41,6 +41,11 @@ final class LoginTableViewController: UITableViewController {
         checkIfInputIsValid(for: sender)
     }
     
+    @IBAction func continueButtonTapped(_ sender: RoundedButton) {
+        
+        //todo: show the payment screen
+    }
+    
     //MARK: - Helpers
     private func setUpViews() {
         
