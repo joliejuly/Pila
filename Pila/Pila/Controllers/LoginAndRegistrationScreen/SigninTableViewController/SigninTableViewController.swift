@@ -20,6 +20,10 @@ final class SigninTableViewController: UITableViewController {
         setUpTextFieldViews()
     }
     
+    @IBAction func editingDidEnd(_ sender: PilaTextField) {
+        emailTextFieldView.checkIfInputIsValid(for: sender)
+    }
+    
     private func setUpTextFieldViews() {
         firstNameTextFieldView.configure(withFieldType: .firstName)
         lastNameTextFieldView.configure(withFieldType: .lastName)

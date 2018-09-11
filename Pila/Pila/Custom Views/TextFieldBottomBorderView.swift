@@ -29,7 +29,6 @@ final class TextFieldBottomBorderView: UIView {
     @IBOutlet weak var textField: PilaTextField!
     @IBOutlet weak var explainingLabel: UILabel!
     
-    @IBOutlet var textFields: [PilaTextField]!
    
     func configure(withFieldType type: TextFieldType) {
         textFieldLabel.text = type.rawValue
@@ -114,5 +113,38 @@ final class TextFieldBottomBorderView: UIView {
         explainingLabel.isHidden = true
     }
     
+    
+    @discardableResult
+    public func checkIfInputIsValid(for textField: UITextField) -> Bool {
+        
+        guard let sender = textField as? PilaTextField else { return false }
+        
+        guard let type = sender.type, sender.hasText, let text = sender.text
+            else {
+                clearIndicatorView(sender: sender)
+                return false
+        }
+        
+        switch type {
+        case .email:
+            return checkEmailImputIsValid(with: text, for: sender)
+        default:
+            return true
+        }
+    }
+    
+    @discardableResult
+    private func checkEmailImputIsValid(with text: String, for sender: PilaTextField) -> Bool {
+        
+        guard sender.type == .email else { return false }
+        
+        if text.isEmail {
+            setIndicatorViewToApproved(sender: sender)
+            return true
+        } else {
+            setErrorIndicatorView(sender: sender, errorType: .email)
+            return false
+        }
+    }
     
 }
