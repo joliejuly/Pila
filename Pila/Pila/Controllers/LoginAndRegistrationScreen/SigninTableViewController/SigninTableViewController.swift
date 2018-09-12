@@ -14,6 +14,7 @@ final class SigninTableViewController: UITableViewController {
     @IBOutlet weak var lastNameTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
+    @IBOutlet weak var registrationButton: RoundedButton!
     
     private lazy var textFieldViews: [TextFieldBottomBorderView] = {
         return [firstNameTextFieldView,
@@ -25,10 +26,26 @@ final class SigninTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTextFieldViews()
+        registrationButton.isEnabled = false
     }
     
     @IBAction func editingDidEnd(_ sender: PilaTextField) {
         checkInput(for: sender)
+    }
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+    
+    private var allInputsAreValid: Bool {
+        var results = [Bool]()
+        
+        textFieldViews.forEach { textFieldView in
+            results.append(textFieldView.checkIfInputIsValid(for: textFieldView.textField))
+        }
+        
+        let falseResults = results.filter { $0 == false }
+        return falseResults.isEmpty
     }
     
     private func setUpTextFieldViews() {
@@ -37,18 +54,12 @@ final class SigninTableViewController: UITableViewController {
         emailTextFieldView.configure(withFieldType: .email)
         passwordTextFieldView.configure(withFieldType: .password)
         
-        firstNameTextFieldView.textField.delegate = self
-        lastNameTextFieldView.textField.delegate = self
-        emailTextFieldView.textField.delegate = self
-        passwordTextFieldView.textField.delegate = self
-    }
-
-    private func checkInputs() {
+        
         textFieldViews.forEach { textFieldView in
-            textFieldView.checkIfInputIsValid(for: textFieldView.textField)
+            textFieldView.textField.delegate = self
         }
     }
-    
+
     @discardableResult
     private func checkInput(for sender: PilaTextField) -> Bool {
         
@@ -76,6 +87,8 @@ extension SigninTableViewController: UITextFieldDelegate {
                 }
             }
         }
+        
+        registrationButton.isEnabled = allInputsAreValid
     }
     
     //will keep user on the same text field until he enters valid email

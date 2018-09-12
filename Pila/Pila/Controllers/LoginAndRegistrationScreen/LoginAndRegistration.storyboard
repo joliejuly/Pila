@@ -632,18 +632,18 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="124" id="Vhg-RD-sCb">
-                                        <rect key="frame" x="0.0" y="309" width="320" height="124"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="137" id="Vhg-RD-sCb">
+                                        <rect key="frame" x="0.0" y="309" width="320" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vhg-RD-sCb" id="g4Y-XY-h82">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEZ-Au-sgM" customClass="TextFieldBottomBorderView" customModule="Pila" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jc5-5k-LCQ" customClass="PilaTextField" customModule="Pila" customModuleProvider="target">
-                                                            <rect key="frame" x="12" y="39.5" width="296" height="45"/>
+                                                            <rect key="frame" x="12" y="46" width="296" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="3aQ-Y6-P2v"/>
                                                             </constraints>
@@ -657,13 +657,13 @@
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ2-8c-bpU">
-                                                            <rect key="frame" x="12" y="4" width="35.5" height="33.5"/>
+                                                            <rect key="frame" x="12" y="4" width="35.5" height="40"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                             <color key="textColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofY-ou-Bal">
-                                                            <rect key="frame" x="12" y="89.5" width="296" height="18"/>
+                                                            <rect key="frame" x="12" y="96" width="296" height="18"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -698,13 +698,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="103" id="bVf-lU-bbc">
-                                        <rect key="frame" x="0.0" y="433" width="320" height="103"/>
+                                        <rect key="frame" x="0.0" y="446" width="320" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVf-lU-bbc" id="PZ5-kU-O7X">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-Rj-lvX" customClass="RoundedButton" customModule="Pila" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-Rj-lvX" customClass="RoundedButton" customModule="Pila" customModuleProvider="target">
                                                     <rect key="frame" x="12" y="21" width="296" height="60"/>
                                                     <color key="backgroundColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                     <constraints>
@@ -744,6 +744,7 @@
                         <outlet property="firstNameTextFieldView" destination="Jg5-jK-NNt" id="Tc2-wG-pNg"/>
                         <outlet property="lastNameTextFieldView" destination="JJB-z0-nxv" id="9ad-vb-gId"/>
                         <outlet property="passwordTextFieldView" destination="WEZ-Au-sgM" id="9mF-Tt-Rcn"/>
+                        <outlet property="registrationButton" destination="vA7-Rj-lvX" id="cJO-uu-ew9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MP-nH-XDN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -67,7 +67,6 @@ final class TextFieldBottomBorderView: UIView {
         case .password:
             textField.keyboardType = .asciiCapable
             textField.isSecureTextEntry = true
-            textField.clearsOnInsertion = false
             
         case .firstName:
             textField.keyboardType = .asciiCapable

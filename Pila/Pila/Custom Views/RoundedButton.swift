@@ -40,6 +40,18 @@ final class RoundedButton: UIButton {
         setUpView()
     }
 
+
+    override var isEnabled: Bool {
+        didSet {
+            if isEnabled == false {
+                alpha = 0.5
+            } else {
+                alpha = 1
+            }
+        }
+    }
+    
+    
     private func setUpView() {
         layer.cornerRadius = frame.height / 2
         
@@ -48,6 +60,6 @@ final class RoundedButton: UIButton {
         let attrTitle = NSAttributedString(string: textForTitle, attributes: [.font: Fonts.latoBold(size: fontSize), .foregroundColor: titleColor])
         
         setAttributedTitle(attrTitle, for: .normal)
-        
+    
     }
 }
