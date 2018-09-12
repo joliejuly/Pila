@@ -25,6 +25,14 @@ extension TextFieldsCheckable {
         return falseResults.isEmpty
     }
     
+    func switchToNextTextField(from sender: PilaTextField) {
+        for (index, textFieldView) in textFieldViews.enumerated() {
+            if textFieldView.textField == sender, index + 1 < textFieldViews.count {
+                textFieldViews[index + 1].textField.becomeFirstResponder()
+            }
+        }
+    }
+    
     @discardableResult
     func checkInput(for sender: PilaTextField) -> Bool {
         

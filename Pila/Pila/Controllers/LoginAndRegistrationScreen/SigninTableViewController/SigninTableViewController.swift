@@ -59,11 +59,7 @@ extension SigninTableViewController: UITextFieldDelegate {
         
         //will focus on next text field if previous input was valid
         if reason == .committed, checkInput(for: sender) {
-            for (index, textFieldView) in textFieldViews.enumerated() {
-                if textFieldView.textField == sender, index + 1 < textFieldViews.count {
-                    textFieldViews[index + 1].textField.becomeFirstResponder()
-                }
-            }
+            switchToNextTextField(from: sender)
         }
         
         registrationButton.isEnabled = allInputsAreValid

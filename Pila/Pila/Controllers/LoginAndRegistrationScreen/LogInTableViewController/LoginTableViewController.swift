@@ -12,6 +12,7 @@ final class LoginTableViewController: UITableViewController, TextFieldsCheckable
 
     @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
+    @IBOutlet weak var continueButton: RoundedButton!
     
     @IBOutlet var textFields: [PilaTextField]!
     
@@ -57,6 +58,8 @@ final class LoginTableViewController: UITableViewController, TextFieldsCheckable
         
         passwordTextFieldView.configure(withFieldType: .password)
         emailTextFieldView.configure(withFieldType: .email)
+        
+        continueButton.isEnabled = false
     }
     
     private func makeFirstResponderTextField(withType type: TextFieldType) {
@@ -76,11 +79,10 @@ extension LoginTableViewController: UITextFieldDelegate {
         
         //will focus on next text field only after email editing
         if reason == .committed, checkInput(for: sender) {
-            
-            if sender.type == .email {
-                 makeFirstResponderTextField(withType: .password)
-            }
+            switchToNextTextField(from: sender)
         }
+        
+        continueButton.isEnabled = allInputsAreValid
     }
     
     //will keep user on the same text field until he enters valid email
