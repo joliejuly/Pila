@@ -43,6 +43,7 @@ final class TextFieldBottomBorderView: UIView {
     private func setUpViews() {
         explainingLabel.alpha = 0
         textFieldLabel.alpha = 0
+        textField.bottomProgressView?.alpha = 0
         
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .continue
@@ -94,40 +95,40 @@ final class TextFieldBottomBorderView: UIView {
 
     //these functions are to be called from concrete view controller
     public func setIndicatorViewToApproved(sender: PilaTextField) {
+        sender.bottomIndicatorBorderColor = #colorLiteral(red: 0, green: 0.7932798266, blue: 0.6872220635, alpha: 1)
+        sender.bottomIndicatorProgress = 1.0
+        
         UIView.animate(withDuration: 0.3) {
             self.explainingLabel.alpha = 0
-            sender.bottomIndicatorBorderColor = #colorLiteral(red: 0, green: 0.7932798266, blue: 0.6872220635, alpha: 1)
-            sender.bottomIndicatorProgress = 1.0
+            sender.bottomProgressView?.alpha = 1
         }
     }
     
     public func setErrorIndicatorView(sender: PilaTextField, errorType: TextFieldInputError) {
         
         explainingLabel.text = errorType.rawValue
-        
-        UIView.animate(withDuration: 0.3) {
-            self.explainingLabel.alpha = 1
-            sender.bottomIndicatorProgress = 0.7
-            sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
-        }
+
+        sender.bottomIndicatorProgress = 0.7
+        sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.7590078712, green: 0.1141509339, blue: 0.2868707478, alpha: 1)
         
         if errorType == .notSafePassword {
-            UIView.animate(withDuration: 0.3) {
-                sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-            }
+            sender.bottomIndicatorBorderColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         }
         
         if errorType == .weakPassword {
-            UIView.animate(withDuration: 0.3) {
-                sender.bottomIndicatorProgress = 0.4
-            }
+            sender.bottomIndicatorProgress = 0.4
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.explainingLabel.alpha = 1
+            sender.bottomProgressView?.alpha = 1
         }
     }
     
     public func clearIndicatorView(sender: PilaTextField) {
         UIView.animate(withDuration: 0.3) {
             self.explainingLabel.alpha = 0
-            sender.bottomIndicatorProgress = 0.0
+            sender.bottomProgressView?.alpha = 0
         }
     }
     

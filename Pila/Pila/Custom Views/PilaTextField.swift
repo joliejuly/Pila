@@ -13,7 +13,7 @@ final class PilaTextField: UITextField {
     
     var type: TextFieldType?
     
-    private var bottomProgressView: UIProgressView?
+    var bottomProgressView: UIProgressView?
     
     private var bottomBorderHeight: CGFloat = 1
     private var bottomIndicatorBorderHeight: CGFloat = 3
