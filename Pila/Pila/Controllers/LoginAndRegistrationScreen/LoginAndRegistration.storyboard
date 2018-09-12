@@ -418,8 +418,6 @@
                         <outlet property="continueButton" destination="Bch-kL-Nb9" id="6vU-xg-RIm"/>
                         <outlet property="emailTextFieldView" destination="Qw9-Mo-cCC" id="eWb-U9-aAc"/>
                         <outlet property="passwordTextFieldView" destination="q33-wJ-e9P" id="RzL-1c-Nss"/>
-                        <outletCollection property="textFields" destination="DYq-nJ-92r" collectionClass="NSMutableArray" id="tcq-nR-UNb"/>
-                        <outletCollection property="textFields" destination="pKa-2i-2NP" collectionClass="NSMutableArray" id="2xU-h0-Fi9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHA-3v-xuh" userLabel="First Responder" sceneMemberID="firstResponder"/>

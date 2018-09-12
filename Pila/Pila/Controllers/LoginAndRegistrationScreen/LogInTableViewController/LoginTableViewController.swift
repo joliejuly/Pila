@@ -14,8 +14,6 @@ final class LoginTableViewController: UITableViewController, TextFieldsCheckable
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var continueButton: RoundedButton!
     
-    @IBOutlet var textFields: [PilaTextField]!
-    
     lazy var textFieldViews: [TextFieldBottomBorderView] = {
         return [emailTextFieldView, passwordTextFieldView]
     }()
@@ -61,14 +59,7 @@ final class LoginTableViewController: UITableViewController, TextFieldsCheckable
         
         continueButton.isEnabled = false
     }
-    
-    private func makeFirstResponderTextField(withType type: TextFieldType) {
-        textFields.forEach { textField in
-            if textField.type == type {
-                textField.becomeFirstResponder()
-            }
-        }
-    }
+
 }
 
 extension LoginTableViewController: UITextFieldDelegate {
