@@ -16,6 +16,7 @@
 		0F3C661D2141C17300490C60 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C661C2141C17300490C60 /* Coordinator.swift */; };
 		0F3C661F2141C2A800490C60 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C661E2141C2A800490C60 /* Storyboards.swift */; };
 		0F3C66212141C48D00490C60 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C66202141C48D00490C60 /* ModuleFactory.swift */; };
+		0F60BBC1214949E500F4364F /* TextFieldCheckable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60BBC0214949E500F4364F /* TextFieldCheckable.swift */; };
 		0F7A60F0214064210020CB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7A60EF214064210020CB74 /* AppDelegate.swift */; };
 		0F7A60F7214064220020CB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7A60F6214064220020CB74 /* Assets.xcassets */; };
 		0F7A60FA214064220020CB74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7A60F8214064220020CB74 /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 		0F3C661C2141C17300490C60 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0F3C661E2141C2A800490C60 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		0F3C66202141C48D00490C60 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		0F60BBC0214949E500F4364F /* TextFieldCheckable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextFieldCheckable.swift; path = Pila/Extensions/TextFieldCheckable.swift; sourceTree = SOURCE_ROOT; };
 		0F7A60EC214064210020CB74 /* Pila.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pila.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7A60EF214064210020CB74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7A60F6214064220020CB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		0F94BFD4214572E7000DDB67 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				0F60BBC0214949E500F4364F /* TextFieldCheckable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				0F3C661F2141C2A800490C60 /* Storyboards.swift in Sources */,
 				0F3C66212141C48D00490C60 /* ModuleFactory.swift in Sources */,
 				0F3C66182141A98900490C60 /* LoginAndRegistrationViewController.swift in Sources */,
+				0F60BBC1214949E500F4364F /* TextFieldCheckable.swift in Sources */,
 				0F7A6124214065890020CB74 /* LoginPromptViewController.swift in Sources */,
 				0F94BFAB2144097E000DDB67 /* TextFieldBottomBorderView.swift in Sources */,
 				0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */,

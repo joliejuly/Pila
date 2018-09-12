@@ -93,9 +93,9 @@ final class PilaTextField: UITextField {
             self.text?.removeAll()
             insertText(text)
         }
-        return success
+        return false
     }
-        
+    
     
 }
 

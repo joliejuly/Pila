@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SigninTableViewController: UITableViewController {
+final class SigninTableViewController: UITableViewController, TextFieldsCheckable {
 
     @IBOutlet weak var firstNameTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var lastNameTextFieldView: TextFieldBottomBorderView!
@@ -16,7 +16,7 @@ final class SigninTableViewController: UITableViewController {
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var registrationButton: RoundedButton!
     
-    private lazy var textFieldViews: [TextFieldBottomBorderView] = {
+    lazy var textFieldViews: [TextFieldBottomBorderView] = {
         return [firstNameTextFieldView,
                 lastNameTextFieldView,
                 emailTextFieldView,
@@ -37,17 +37,6 @@ final class SigninTableViewController: UITableViewController {
         view.endEditing(true)
     }
     
-    private var allInputsAreValid: Bool {
-        var results = [Bool]()
-        
-        textFieldViews.forEach { textFieldView in
-            results.append(textFieldView.checkIfInputIsValid(for: textFieldView.textField))
-        }
-        
-        let falseResults = results.filter { $0 == false }
-        return falseResults.isEmpty
-    }
-    
     private func setUpTextFieldViews() {
         firstNameTextFieldView.configure(withFieldType: .firstName)
         lastNameTextFieldView.configure(withFieldType: .lastName)
@@ -58,17 +47,6 @@ final class SigninTableViewController: UITableViewController {
         textFieldViews.forEach { textFieldView in
             textFieldView.textField.delegate = self
         }
-    }
-
-    @discardableResult
-    private func checkInput(for sender: PilaTextField) -> Bool {
-        
-        for textFieldView in textFieldViews {
-            if textFieldView.textField == sender {
-                return textFieldView.checkIfInputIsValid(for: sender)
-            }
-        }
-        return false
     }
    
 }

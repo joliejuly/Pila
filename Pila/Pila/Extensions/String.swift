@@ -16,8 +16,8 @@ extension String {
     }
 
     //checking email format
-    private static let firstpart = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?"
-    private static let serverpart = "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}"
+    private static let firstpart = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{1,30}[A-Z0-9a-z])?"
+    private static let serverpart = "([A-Z0-9a-z]([A-Z0-9a-z-]{2,30}[A-Z0-9a-z])?\\.){1,5}"
     private static let emailRegex = firstpart + "@" + serverpart + "[A-Za-z]{2,6}"
     
     public var isEmail: Bool {
@@ -33,10 +33,6 @@ extension String {
         switch numberOfCharacters {
         case 0...6: return 0.2
         default:
-            
-            if self.latinCharactersOnly {
-                return 0.6
-            }
             
             for character in self {
                 guard let scalarCharacter = character.unicodeScalars.first else { return 0.6 }

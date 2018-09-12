@@ -8,12 +8,16 @@
 
 import UIKit
 
-final class LoginTableViewController: UITableViewController {
+final class LoginTableViewController: UITableViewController, TextFieldsCheckable {
 
     @IBOutlet weak var emailTextFieldView: TextFieldBottomBorderView!
     @IBOutlet weak var passwordTextFieldView: TextFieldBottomBorderView!
     
     @IBOutlet var textFields: [PilaTextField]!
+    
+    lazy var textFieldViews: [TextFieldBottomBorderView] = {
+        return [emailTextFieldView, passwordTextFieldView]
+    }()
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -38,7 +42,7 @@ final class LoginTableViewController: UITableViewController {
     //MARK: - Actions
     
     @IBAction func editingDidEnd(_ sender: PilaTextField) {
-        emailTextFieldView.checkIfInputIsValid(for: sender)
+        checkInput(for: sender)
     }
     
     @IBAction func continueButtonTapped(_ sender: RoundedButton) {
@@ -68,10 +72,10 @@ extension LoginTableViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         
+        guard let sender = textField as? PilaTextField else { return }
+        
         //will focus on next text field only after email editing
-        if reason == .committed, emailTextFieldView.checkIfInputIsValid(for: textField) {
-            
-            guard let sender = textField as? PilaTextField else { return }
+        if reason == .committed, checkInput(for: sender) {
             
             if sender.type == .email {
                  makeFirstResponderTextField(withType: .password)
@@ -81,7 +85,10 @@ extension LoginTableViewController: UITextFieldDelegate {
     
     //will keep user on the same text field until he enters valid email
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return emailTextFieldView.checkIfInputIsValid(for: textField)
+        
+        guard let sender = textField as? PilaTextField else { return false }
+        
+        return checkInput(for: sender)
     }
     
 }
