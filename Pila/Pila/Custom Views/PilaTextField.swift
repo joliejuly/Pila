@@ -84,6 +84,7 @@ final class PilaTextField: UITextField {
         }
     }
     
+    //to solve the issue with password field clears on editing
     @discardableResult
     override func becomeFirstResponder() -> Bool {
         
