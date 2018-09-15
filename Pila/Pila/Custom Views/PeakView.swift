@@ -16,15 +16,15 @@ final class PeakView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: 0, y: 100))
-        bezierPath.addCurve(to: CGPoint(x: 35.65, y: 17.83), controlPoint1: CGPoint(x: 5.76, y: 99.04), controlPoint2: CGPoint(x: 23.03, y: 49.1))
-        bezierPath.addCurve(to: CGPoint(x: 47.98, y: 3), controlPoint1: CGPoint(x: 40.17, y: 6.63), controlPoint2: CGPoint(x: 43.9, y: 2.95))
-        bezierPath.addCurve(to: CGPoint(x: 60.45, y: 17.41), controlPoint1: CGPoint(x: 52.05, y: 3.05), controlPoint2: CGPoint(x: 56.46, y: 6.81))
-        bezierPath.addCurve(to: CGPoint(x: 95, y: 100), controlPoint1: CGPoint(x: 79.65, y: 68.31), controlPoint2: CGPoint(x: 82.53, y: 91.33))
+        bezierPath.move(to: CGPoint(x: 0, y: 25))
+        bezierPath.addCurve(to: CGPoint(x: 9.38, y: 3.82), controlPoint1: CGPoint(x: 1.52, y: 24.75), controlPoint2: CGPoint(x: 6.06, y: 11.88))
+        bezierPath.addCurve(to: CGPoint(x: 12.63, y: 0), controlPoint1: CGPoint(x: 10.57, y: 0.94), controlPoint2: CGPoint(x: 11.55, y: -0.01))
+        bezierPath.addCurve(to: CGPoint(x: 15.91, y: 3.71), controlPoint1: CGPoint(x: 13.7, y: 0.01), controlPoint2: CGPoint(x: 14.86, y: 0.98))
+        bezierPath.addCurve(to: CGPoint(x: 25, y: 25), controlPoint1: CGPoint(x: 20.96, y: 16.83), controlPoint2: CGPoint(x: 21.72, y: 22.77))
         UIColor.white.setFill()
         bezierPath.fill()
+
 
     }
  
