@@ -29,6 +29,7 @@
 		0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */; };
 		0F94BFD021456E46000DDB67 /* SigninTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */; };
 		0FA95E3A21406E6C009FA3BF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA95E3921406E6C009FA3BF /* RoundedButton.swift */; };
+		0FD68588214D5C0A00A9043B /* PeakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD68587214D5C0A00A9043B /* PeakView.swift */; };
 		0FD8A83B2143E6DD00B3BCDE /* PilaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */; };
 		0FD8A83E2143E94B00B3BCDE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8A83D2143E94B00B3BCDE /* Fonts.swift */; };
 		0FDD9DAC2145BF12005BA1D1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD9DAB2145BF12005BA1D1 /* String.swift */; };
@@ -81,6 +82,7 @@
 		0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTableViewController.swift; sourceTree = "<group>"; };
 		0FA95E3921406E6C009FA3BF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		0FD68587214D5C0A00A9043B /* PeakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakView.swift; sourceTree = "<group>"; };
 		0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilaTextField.swift; sourceTree = "<group>"; };
 		0FD8A83D2143E94B00B3BCDE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0FDD9DAB2145BF12005BA1D1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				0FA95E3921406E6C009FA3BF /* RoundedButton.swift */,
 				0F94BFAA2144097E000DDB67 /* TextFieldBottomBorderView.swift */,
 				0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */,
+				0FD68587214D5C0A00A9043B /* PeakView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				0F94BFAB2144097E000DDB67 /* TextFieldBottomBorderView.swift in Sources */,
 				0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */,
 				0F7A60F0214064210020CB74 /* AppDelegate.swift in Sources */,
+				0FD68588214D5C0A00A9043B /* PeakView.swift in Sources */,
 				0F94BFD021456E46000DDB67 /* SigninTableViewController.swift in Sources */,
 				0FD8A83B2143E6DD00B3BCDE /* PilaTextField.swift in Sources */,
 				0F3C661A2141A99800490C60 /* LoginAndRegistrationViewModel.swift in Sources */,
