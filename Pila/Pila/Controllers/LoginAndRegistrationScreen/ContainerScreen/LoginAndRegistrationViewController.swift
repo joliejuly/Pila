@@ -10,8 +10,8 @@ import UIKit
 
 final class LoginAndRegistrationViewController: UIViewController {
     
-    @IBOutlet weak var loginPeak: UIImageView!
-    @IBOutlet weak var signInPeak: UIImageView!
+    @IBOutlet weak var loginPeak: PeakView!
+    @IBOutlet weak var signInPeak: PeakView!
     
     @IBOutlet weak var loginSectionButton: UIButton!
     @IBOutlet weak var signInSectionButton: UIButton!

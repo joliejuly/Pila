@@ -60,31 +60,34 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peak" translatesAutoresizingMaskIntoConstraints="NO" id="ATy-Fc-TWy" userLabel="sign_in_peak">
-                                        <rect key="frame" x="241" y="51" width="25" height="26"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-c3-G4J" userLabel="loginPeakView" customClass="PeakView" customModule="Pila" customModuleProvider="target">
+                                        <rect key="frame" x="54.5" y="45" width="25" height="25"/>
+                                        <color key="backgroundColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="Rgj-e3-Jet"/>
-                                            <constraint firstAttribute="height" constant="26" id="xvh-dh-z9L"/>
+                                            <constraint firstAttribute="width" constant="25" id="7Jr-Pn-pkx"/>
+                                            <constraint firstAttribute="height" constant="25" id="NNd-RN-se3"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peak" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-nN-ljq" userLabel="login_peak">
-                                        <rect key="frame" x="54.5" y="51" width="25" height="26"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-i0-O8L" userLabel="signInPeakView" customClass="PeakView" customModule="Pila" customModuleProvider="target">
+                                        <rect key="frame" x="241" y="45" width="25" height="25"/>
+                                        <color key="backgroundColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="26" id="WCA-N7-kdm"/>
-                                            <constraint firstAttribute="width" constant="25" id="lzq-40-XXY"/>
+                                            <constraint firstAttribute="height" constant="25" id="Jhw-7p-IqG"/>
+                                            <constraint firstAttribute="width" constant="25" id="mdi-0Y-ZE2"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.56470588239999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <constraints>
+                                    <constraint firstItem="Ccs-c3-G4J" firstAttribute="centerX" secondItem="0Mb-Xe-cti" secondAttribute="centerX" id="5cZ-HJ-xgJ"/>
                                     <constraint firstItem="zWT-Dr-onK" firstAttribute="leading" secondItem="RW1-1E-8VS" secondAttribute="leading" constant="40" id="6ET-iX-XUB"/>
                                     <constraint firstAttribute="trailing" secondItem="zWT-Dr-onK" secondAttribute="trailing" constant="40" id="7xB-kP-iC6"/>
-                                    <constraint firstItem="H9r-nN-ljq" firstAttribute="centerX" secondItem="0Mb-Xe-cti" secondAttribute="centerX" id="CWQ-qI-0mY"/>
-                                    <constraint firstItem="ATy-Fc-TWy" firstAttribute="top" secondItem="RW1-1E-8VS" secondAttribute="top" constant="51" id="JUn-na-HaD"/>
+                                    <constraint firstAttribute="bottom" secondItem="dVF-i0-O8L" secondAttribute="bottom" id="HvD-MK-uyo"/>
+                                    <constraint firstItem="Ccs-c3-G4J" firstAttribute="top" secondItem="zWT-Dr-onK" secondAttribute="bottom" constant="-7" id="Oct-f2-1oA"/>
+                                    <constraint firstItem="dVF-i0-O8L" firstAttribute="centerX" secondItem="0eH-Hj-tsr" secondAttribute="centerX" id="UUS-vC-Mol"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ccs-c3-G4J" secondAttribute="bottom" id="Xb4-hn-Bqf"/>
                                     <constraint firstAttribute="height" constant="70" id="emY-Uz-Yxt"/>
-                                    <constraint firstItem="H9r-nN-ljq" firstAttribute="centerY" secondItem="ATy-Fc-TWy" secondAttribute="centerY" id="kQz-2U-WJP"/>
                                     <constraint firstItem="zWT-Dr-onK" firstAttribute="centerY" secondItem="RW1-1E-8VS" secondAttribute="centerY" id="vr9-E0-lUw"/>
-                                    <constraint firstItem="ATy-Fc-TWy" firstAttribute="centerX" secondItem="0eH-Hj-tsr" secondAttribute="centerX" id="z8w-ta-Dpy"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqC-EI-HuY">
@@ -121,10 +124,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="loginContainerView" destination="JqC-EI-HuY" id="F0g-gZ-GtY"/>
-                        <outlet property="loginPeak" destination="H9r-nN-ljq" id="AFK-76-eFK"/>
+                        <outlet property="loginPeak" destination="Ccs-c3-G4J" id="z7N-tf-pGC"/>
                         <outlet property="loginSectionButton" destination="0Mb-Xe-cti" id="EZQ-i3-aJc"/>
                         <outlet property="signInContainerView" destination="Iwx-Is-tYZ" id="WuU-sz-ngD"/>
-                        <outlet property="signInPeak" destination="ATy-Fc-TWy" id="gxB-aC-gsS"/>
+                        <outlet property="signInPeak" destination="dVF-i0-O8L" id="qT0-9O-c89"/>
                         <outlet property="signInSectionButton" destination="0eH-Hj-tsr" id="S4t-CX-tcx"/>
                     </connections>
                 </viewController>
@@ -750,7 +753,4 @@
             <point key="canvasLocation" x="1321.875" y="916.90140845070425"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="peak" width="42" height="36"/>
-    </resources>
 </document>

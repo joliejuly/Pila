@@ -17,15 +17,13 @@ final class PeakView: UIView {
     override func draw(_ rect: CGRect) {
         
         let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: 0, y: 25))
-        bezierPath.addCurve(to: CGPoint(x: 9.38, y: 3.82), controlPoint1: CGPoint(x: 1.52, y: 24.75), controlPoint2: CGPoint(x: 6.06, y: 11.88))
-        bezierPath.addCurve(to: CGPoint(x: 12.63, y: 0), controlPoint1: CGPoint(x: 10.57, y: 0.94), controlPoint2: CGPoint(x: 11.55, y: -0.01))
-        bezierPath.addCurve(to: CGPoint(x: 15.91, y: 3.71), controlPoint1: CGPoint(x: 13.7, y: 0.01), controlPoint2: CGPoint(x: 14.86, y: 0.98))
-        bezierPath.addCurve(to: CGPoint(x: 25, y: 25), controlPoint1: CGPoint(x: 20.96, y: 16.83), controlPoint2: CGPoint(x: 21.72, y: 22.77))
+        bezierPath.move(to: CGPoint(x: 4, y: 25))
+        bezierPath.addCurve(to: CGPoint(x: 10.13, y: 14.84), controlPoint1: CGPoint(x: 5.15, y: 24.88), controlPoint2: CGPoint(x: 7.61, y: 18.7))
+        bezierPath.addCurve(to: CGPoint(x: 12.6, y: 13), controlPoint1: CGPoint(x: 11.03, y: 13.45), controlPoint2: CGPoint(x: 11.78, y: 12.99))
+        bezierPath.addCurve(to: CGPoint(x: 15, y: 15), controlPoint1: CGPoint(x: 13.41, y: 13.01), controlPoint2: CGPoint(x: 14.2, y: 13.69))
+        bezierPath.addCurve(to: CGPoint(x: 21, y: 25), controlPoint1: CGPoint(x: 16.12, y: 16.83), controlPoint2: CGPoint(x: 19.23, y: 24.24))
         UIColor.white.setFill()
         bezierPath.fill()
-
-
     }
  
 
