@@ -24,7 +24,14 @@ final class RoundedButton: UIButton {
             layer.borderColor = borderColor.cgColor
         }
     }
-
+    
+    @IBInspectable
+    private var fontSize: CGFloat = 20 {
+        didSet {
+            setUpView()
+        }
+    }
+    
     override func prepareForInterfaceBuilder() {
         setUpView()
     }
@@ -33,7 +40,26 @@ final class RoundedButton: UIButton {
         setUpView()
     }
 
+
+    override var isEnabled: Bool {
+        didSet {
+            if isEnabled == false {
+                alpha = 0.5
+            } else {
+                alpha = 1
+            }
+        }
+    }
+    
+    
     private func setUpView() {
         layer.cornerRadius = frame.height / 2
+        
+        guard let textForTitle = title(for: .normal), let titleColor = titleColor(for: .normal) else { return }
+        
+        let attrTitle = NSAttributedString(string: textForTitle, attributes: [.font: Fonts.latoBold(size: fontSize), .foregroundColor: titleColor])
+        
+        setAttributedTitle(attrTitle, for: .normal)
+    
     }
 }

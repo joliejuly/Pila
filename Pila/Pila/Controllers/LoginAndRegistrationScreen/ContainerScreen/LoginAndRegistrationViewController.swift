@@ -10,12 +10,11 @@ import UIKit
 
 final class LoginAndRegistrationViewController: UIViewController {
     
-    @IBOutlet weak var loginPeak: UIImageView!
-    @IBOutlet weak var signInPeak: UIImageView!
+    @IBOutlet weak var loginPeak: PeakView!
+    @IBOutlet weak var signInPeak: PeakView!
     
     @IBOutlet weak var loginSectionButton: UIButton!
     @IBOutlet weak var signInSectionButton: UIButton!
-    
     
     @IBOutlet weak var loginContainerView: UIView!
     @IBOutlet weak var signInContainerView: UIView!
@@ -79,7 +78,7 @@ final class LoginAndRegistrationViewController: UIViewController {
         signInSectionButton.isEnabled = true
 
         
-        
+        view.endEditing(true)
     }
     
     private func setUpSignInView(animated: Bool) {
@@ -102,6 +101,8 @@ final class LoginAndRegistrationViewController: UIViewController {
 
         loginSectionButton.isEnabled = true
         signInSectionButton.isEnabled = false
+        
+        view.endEditing(true)
     }
     
     
