@@ -58,7 +58,7 @@ final class RoundedButton: UIButton {
         else { return }
         let attrTitle = NSAttributedString(string: textForTitle,
                                            attributes: [
-                                            .font: Fonts.latoBold(size: fontSize),
+                                            .font: UIFont.latoBold(size: fontSize),
                                             .foregroundColor: titleColor
                                             ])
         setAttributedTitle(attrTitle, for: .normal)

@@ -98,7 +98,7 @@ final class PilaTextField: UITextField {
 extension PilaTextField {
     private func setUpViews() {
         borderStyle = .none
-        font = Fonts.latoBold(size: 20)
+        font = UIFont.latoBold(size: 20)
         textColor = .black
         addBottomBorder()
         addBottomIndicatorBorder()
@@ -115,7 +115,7 @@ extension PilaTextField {
             string: placeholder,
             attributes: [
                 .foregroundColor: placeholderColor,
-                .font: Fonts.latoRegular(size: placeholderSize)
+                .font: UIFont.latoRegular(size: placeholderSize)
             ])
         attributedPlaceholder = attributed
     }

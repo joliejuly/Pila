@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Fonts {
+extension UIFont {
     static func latoRegular(size: CGFloat) -> UIFont {
         return UIFont(name: "Lato-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
     }
