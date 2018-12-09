@@ -12,7 +12,6 @@ import UIKit
 final class PilaTextField: UITextField {
     
     var type: TextFieldType?
-    
     var bottomProgressView: UIProgressView?
     
     private var bottomBorderHeight: CGFloat = 1
@@ -74,8 +73,6 @@ final class PilaTextField: UITextField {
         updateViews()
     }
     
-    
-    //to solve the issue with password field clears on editing
     override var isSecureTextEntry: Bool {
         didSet {
             if isFirstResponder {
@@ -87,27 +84,22 @@ final class PilaTextField: UITextField {
     //to solve the issue with password field clears on editing
     @discardableResult
     override func becomeFirstResponder() -> Bool {
-        
-        let success = super.becomeFirstResponder()
-        if isSecureTextEntry, let text = self.text {
+        let _ = super.becomeFirstResponder()
+        if isSecureTextEntry,
+            let text = self.text {
             self.text?.removeAll()
             insertText(text)
         }
         return false
     }
-    
-    
 }
 
 //MARK: - Helpers
 extension PilaTextField {
-    
     private func setUpViews() {
         borderStyle = .none
-        
         font = Fonts.latoBold(size: 20)
         textColor = .black
-        
         addBottomBorder()
         addBottomIndicatorBorder()
         setUpPlaceholder()
@@ -119,9 +111,12 @@ extension PilaTextField {
     
     private func setUpPlaceholder() {
         guard let placeholder = placeholder else { return }
-        
-        let attributed = NSAttributedString(string: placeholder, attributes: [.foregroundColor: placeholderColor, .font: Fonts.latoRegular(size: placeholderSize)])
-        
+        let attributed = NSAttributedString(
+            string: placeholder,
+            attributes: [
+                .foregroundColor: placeholderColor,
+                .font: Fonts.latoRegular(size: placeholderSize)
+            ])
         attributedPlaceholder = attributed
     }
     
@@ -130,54 +125,52 @@ extension PilaTextField {
     }
     
     private func updateIndicatorBottomBorder() {
-        
         bottomProgressView?.progressTintColor = bottomIndicatorBorderColor
         bottomProgressView?.progress = bottomIndicatorProgress
     }
     
-    
     private func addBottomBorder() {
         let borderView = UIView()
-        
         borderView.backgroundColor = #colorLiteral(red: 0.8630058169, green: 0.9392105937, blue: 0.9747415185, alpha: 1)
         borderView.tag = 1
-        
         addSubview(borderView)
-        
         borderView.translatesAutoresizingMaskIntoConstraints = false
-        
         let constraints = [
-            borderView.heightAnchor.constraint(equalToConstant: bottomBorderHeight),
-            borderView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            borderView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            borderView.topAnchor.constraint(equalTo: bottomAnchor)
+            borderView.heightAnchor.constraint(
+                equalToConstant: bottomBorderHeight),
+            borderView.leadingAnchor.constraint(
+                equalTo: leadingAnchor),
+            borderView.trailingAnchor.constraint(
+                equalTo: trailingAnchor),
+            borderView.topAnchor.constraint(
+                equalTo: bottomAnchor)
         ]
-        
         NSLayoutConstraint.activate(constraints)
     }
     
     private func addBottomIndicatorBorder() {
         bottomProgressView = UIProgressView(progressViewStyle: .bar)
-        
-        guard let indicatorBorderView = bottomProgressView else { return }
-        
+        guard
+            let indicatorBorderView = bottomProgressView
+            else { return }
         indicatorBorderView.progressTintColor = bottomIndicatorBorderColor
         indicatorBorderView.tag = 2
-        
-        guard let borderView = viewWithTag(1) else { return }
-        
+        guard
+            let borderView = viewWithTag(1)
+            else { return }
         addSubview(indicatorBorderView)
-        
-        indicatorBorderView.translatesAutoresizingMaskIntoConstraints = false
-        
+        indicatorBorderView
+            .translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            indicatorBorderView.heightAnchor.constraint(equalToConstant: bottomIndicatorBorderHeight),
-            indicatorBorderView.leadingAnchor.constraint(equalTo: borderView.leadingAnchor),
-            indicatorBorderView.trailingAnchor.constraint(equalTo: borderView.trailingAnchor),
-            indicatorBorderView.bottomAnchor.constraint(equalTo: borderView.topAnchor)
+            indicatorBorderView.heightAnchor.constraint(
+                equalToConstant: bottomIndicatorBorderHeight),
+            indicatorBorderView.leadingAnchor.constraint(
+                equalTo: borderView.leadingAnchor),
+            indicatorBorderView.trailingAnchor.constraint(
+                equalTo: borderView.trailingAnchor),
+            indicatorBorderView.bottomAnchor.constraint(
+                equalTo: borderView.topAnchor)
         ]
-        
         NSLayoutConstraint.activate(constraints)
     }
-
 }

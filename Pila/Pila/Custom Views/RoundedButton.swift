@@ -32,15 +32,6 @@ final class RoundedButton: UIButton {
         }
     }
     
-    override func prepareForInterfaceBuilder() {
-        setUpView()
-    }
-    
-    override func awakeFromNib() {
-        setUpView()
-    }
-
-
     override var isEnabled: Bool {
         didSet {
             if isEnabled == false {
@@ -51,15 +42,25 @@ final class RoundedButton: UIButton {
         }
     }
     
+    override func prepareForInterfaceBuilder() {
+        setUpView()
+    }
     
+    override func awakeFromNib() {
+        setUpView()
+    }
+
     private func setUpView() {
         layer.cornerRadius = frame.height / 2
-        
-        guard let textForTitle = title(for: .normal), let titleColor = titleColor(for: .normal) else { return }
-        
-        let attrTitle = NSAttributedString(string: textForTitle, attributes: [.font: Fonts.latoBold(size: fontSize), .foregroundColor: titleColor])
-        
+        guard
+            let textForTitle = title(for: .normal),
+            let titleColor = titleColor(for: .normal)
+        else { return }
+        let attrTitle = NSAttributedString(string: textForTitle,
+                                           attributes: [
+                                            .font: Fonts.latoBold(size: fontSize),
+                                            .foregroundColor: titleColor
+                                            ])
         setAttributedTitle(attrTitle, for: .normal)
-    
     }
 }

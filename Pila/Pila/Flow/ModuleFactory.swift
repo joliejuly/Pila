@@ -11,32 +11,33 @@ import UIKit
 final class ModuleFactory {
     
     func makeLoginPromptScreen() -> LoginPromptViewController {
-        
-        guard let loginPromptScreen = instantiateModule(from: .loginPrompt, withID: .loginPrompt) as? LoginPromptViewController
-        else {
-            fatalError("Cannot instantiate LoginPromptScreen")
-        }
-        
+        guard
+            let loginPromptScreen = instantiateModule(
+                from: .loginPrompt,
+                withID: .loginPrompt) as? LoginPromptViewController
+            else { fatalError("Cannot instantiate LoginPromptScreen") }
         return loginPromptScreen
     }
     
-    
-    func makeLoginSignInScreen(with selectedSection: SectionChosen) -> LoginAndRegistrationViewController {
-        guard let loginSignInScreen = instantiateModule(from: .loginAndRegistration, withID: .loginAndRegistration) as? LoginAndRegistrationViewController
-            else {
-                fatalError("Cannot instantiate LoginPromptScreen")
-        }
+    func makeLoginSignInScreen(
+        with selectedSection: SectionChosen)
+        -> LoginAndRegistrationViewController {
+        guard
+            let loginSignInScreen = instantiateModule(
+                from: .loginAndRegistration,
+                withID: .loginAndRegistration)
+            as? LoginAndRegistrationViewController
+            else { fatalError("Cannot instantiate LoginPromptScreen") }
         loginSignInScreen.viewModel.sectionChosen = selectedSection
         return loginSignInScreen
     }
     
-   
-    
-    private func instantiateModule(from storyboard: Storyboards, withID storyboardID: StoryboardID) -> UIViewController? {
-        let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: storyboardID.rawValue)
+    private func instantiateModule(
+        from storyboard: Storyboards,
+        withID storyboardID: StoryboardID) -> UIViewController? {
+        let storyboard = UIStoryboard(name: storyboard.rawValue,
+                                      bundle: nil)
+        return storyboard.instantiateViewController(
+            withIdentifier: storyboardID.rawValue)
     }
-    
-    
-    
 }

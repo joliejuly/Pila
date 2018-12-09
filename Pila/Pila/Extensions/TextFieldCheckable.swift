@@ -16,26 +16,26 @@ extension TextFieldsCheckable {
     
     var allInputsAreValid: Bool {
         var results = [Bool]()
-        
         textFieldViews.forEach { textFieldView in
-            results.append(textFieldView.checkIfInputIsValid(for: textFieldView.textField))
+            results.append(textFieldView
+                .checkIfInputIsValid(for: textFieldView.textField))
         }
-        
         let falseResults = results.filter { $0 == false }
         return falseResults.isEmpty
     }
     
     func switchToNextTextField(from sender: PilaTextField) {
         for (index, textFieldView) in textFieldViews.enumerated() {
-            if textFieldView.textField == sender, index + 1 < textFieldViews.count {
-                textFieldViews[index + 1].textField.becomeFirstResponder()
+            if textFieldView.textField == sender,
+                index + 1 < textFieldViews.count {
+                textFieldViews[index + 1]
+                    .textField.becomeFirstResponder()
             }
         }
     }
     
     @discardableResult
     func checkInput(for sender: PilaTextField) -> Bool {
-        
         for textFieldView in textFieldViews {
             if textFieldView.textField == sender {
                 return textFieldView.checkIfInputIsValid(for: sender)
@@ -43,6 +43,4 @@ extension TextFieldsCheckable {
         }
         return false
     }
-    
-    
 }

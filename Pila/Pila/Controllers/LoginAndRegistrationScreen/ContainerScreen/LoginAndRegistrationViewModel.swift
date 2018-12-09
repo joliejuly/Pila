@@ -9,14 +9,12 @@
 final class LoginAndRegistrationViewModel {
     
     var userDidChooseSection: ((SectionChosen) -> Void)?
-    
     var sectionChosen: SectionChosen = .login {
         didSet {
             userDidChooseSection?(sectionChosen)
         }
     }
 }
-
 
 enum SectionChosen {
     case login

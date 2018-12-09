@@ -25,6 +25,7 @@
 		0F7A6124214065890020CB74 /* LoginPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7A6123214065890020CB74 /* LoginPromptViewController.swift */; };
 		0F7A6126214065990020CB74 /* LoginPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7A6125214065990020CB74 /* LoginPromptViewModel.swift */; };
 		0F7A6128214066180020CB74 /* LoginPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7A6127214066180020CB74 /* LoginPrompt.storyboard */; };
+		0F923F4A21BD26EC00686F5F /* TextFieldType+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F923F4921BD26EC00686F5F /* TextFieldType+Error.swift */; };
 		0F94BFAB2144097E000DDB67 /* TextFieldBottomBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFAA2144097E000DDB67 /* TextFieldBottomBorderView.swift */; };
 		0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */; };
 		0F94BFD021456E46000DDB67 /* SigninTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */; };
@@ -78,6 +79,7 @@
 		0F7A6123214065890020CB74 /* LoginPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewController.swift; sourceTree = "<group>"; };
 		0F7A6125214065990020CB74 /* LoginPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewModel.swift; sourceTree = "<group>"; };
 		0F7A6127214066180020CB74 /* LoginPrompt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPrompt.storyboard; sourceTree = "<group>"; };
+		0F923F4921BD26EC00686F5F /* TextFieldType+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldType+Error.swift"; sourceTree = "<group>"; };
 		0F94BFAA2144097E000DDB67 /* TextFieldBottomBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBottomBorderView.swift; sourceTree = "<group>"; };
 		0F94BFCD21456E30000DDB67 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		0F94BFCF21456E46000DDB67 /* SigninTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTableViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD8A83D2143E94B00B3BCDE /* Fonts.swift */,
+				0F923F4921BD26EC00686F5F /* TextFieldType+Error.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				0F3C66212141C48D00490C60 /* ModuleFactory.swift in Sources */,
 				0F3C66182141A98900490C60 /* LoginAndRegistrationViewController.swift in Sources */,
 				0F60BBC1214949E500F4364F /* TextFieldCheckable.swift in Sources */,
+				0F923F4A21BD26EC00686F5F /* TextFieldType+Error.swift in Sources */,
 				0F7A6124214065890020CB74 /* LoginPromptViewController.swift in Sources */,
 				0F94BFAB2144097E000DDB67 /* TextFieldBottomBorderView.swift in Sources */,
 				0F94BFCE21456E30000DDB67 /* LoginTableViewController.swift in Sources */,

@@ -13,7 +13,8 @@ final class Coordinator {
     private var router: UINavigationController?
     private var factory: ModuleFactory?
     
-    init(router: UINavigationController, factory: ModuleFactory) {
+    init(router: UINavigationController,
+         factory: ModuleFactory) {
         self.router = router
         self.factory = factory
     }
@@ -23,15 +24,20 @@ final class Coordinator {
     }
     
     func showLoginSignInScreen(with selectedSection: SectionChosen) {
-        guard let loginSignInScreen = factory?.makeLoginSignInScreen(with: selectedSection) else { return }
+        guard let loginSignInScreen = factory?
+            .makeLoginSignInScreen(with: selectedSection)
+            else { return }
         loginSignInScreen.coordinator = self
-        router?.pushViewController(loginSignInScreen, animated: true)
+        router?.pushViewController(loginSignInScreen,
+                                   animated: true)
     }
     
     private func showLoginPromptScreen() {
-        guard let loginPromptScreen = factory?.makeLoginPromptScreen() else { return }
+        guard let loginPromptScreen = factory?
+            .makeLoginPromptScreen()
+            else { return }
         loginPromptScreen.coordinator = self
-        router?.setViewControllers([loginPromptScreen], animated: true)
+        router?.setViewControllers([loginPromptScreen],
+                                   animated: true)
     }
-    
 }
