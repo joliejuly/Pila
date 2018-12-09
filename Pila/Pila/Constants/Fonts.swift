@@ -9,7 +9,6 @@
 import UIKit
 
 struct Fonts {
-    
     static func latoRegular(size: CGFloat) -> UIFont {
         return UIFont(name: "Lato-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
     }
@@ -21,5 +20,4 @@ struct Fonts {
     static func gilroy(size: CGFloat) -> UIFont {
         return UIFont(name: "Gilroy-ExtraBold", size: size) ?? UIFont.boldSystemFont(ofSize: size)
     }
-    
 }
