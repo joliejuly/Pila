@@ -34,7 +34,6 @@
 		0FD8A83B2143E6DD00B3BCDE /* PilaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */; };
 		0FD8A83E2143E94B00B3BCDE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8A83D2143E94B00B3BCDE /* UIFont+Extension.swift */; };
 		0FDD9DAC2145BF12005BA1D1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD9DAB2145BF12005BA1D1 /* String+Extension.swift */; };
-		0FDD9DAE21468F20005BA1D1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD9DAD21468F20005BA1D1 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +87,6 @@
 		0FD8A83A2143E6DD00B3BCDE /* PilaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilaTextField.swift; sourceTree = "<group>"; };
 		0FD8A83D2143E94B00B3BCDE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		0FDD9DAB2145BF12005BA1D1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		0FDD9DAD21468F20005BA1D1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +285,6 @@
 			children = (
 				0FD8A83D2143E94B00B3BCDE /* UIFont+Extension.swift */,
 				0FDD9DAB2145BF12005BA1D1 /* String+Extension.swift */,
-				0FDD9DAD21468F20005BA1D1 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FDD9DAE21468F20005BA1D1 /* UIApplication+Extension.swift in Sources */,
 				0F3C661F2141C2A800490C60 /* Storyboards.swift in Sources */,
 				0F3C66212141C48D00490C60 /* ModuleFactory.swift in Sources */,
 				0F3C66182141A98900490C60 /* LoginAndRegistrationViewController.swift in Sources */,

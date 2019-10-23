@@ -44,8 +44,6 @@ final class LoginTableViewController: UITableViewController, TextFieldsCheckable
     
     //MARK: - Helpers
     private func setUpViews() {
-        UIApplication.shared
-            .statusBarView?.backgroundColor = #colorLiteral(red: 0.1084083095, green: 0.5698664188, blue: 0.9313239455, alpha: 1)
         passwordTextFieldView.configure(withFieldType: .password)
         emailTextFieldView.configure(withFieldType: .email)
         continueButton.isEnabled = false
